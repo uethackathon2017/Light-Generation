@@ -44,38 +44,23 @@ module.exports = (app, passport) => {
         const age      = req.body.age;
         const name     = req.body.name;
 
-        //console.log(username + " " + age + " " + name);
-        // user.update({
-        //     username: username
-        // }, {
-        //     info: {
-        //         age : req.body.age,
-        //         name : req.body.name
-        //     }
-        // }, function(err, num, rawres){
-        //     if (err) throw err;
-        //     res.send("Done");
-        // });
         user.findOne({
             username: username,
         }, (err, one) => {
             if (err) throw err;
             if (!one) res.send('something err');
-            
-            //console.log(one);
-            // one.info.age = req.body.age;
-            // one.info.name = req.body.name;
+
             one.info = {
                 age : req.body.age,
                 name : req.body.name
             }
-            //console.log(req.body);
-            //console.log(one);
+
             one.save( (err) => {
                 if (err) throw err;
                 //console.log(one);
                 res.send('Thay đổi thông tin thành công');
             }); 
+
         });        
     });
 
@@ -138,10 +123,30 @@ module.exports = (app, passport) => {
 
     //Nơi authenticate
     const authRouter = express.Router();
-    authRouter.post('/login', passport.authenticate('local', {
-        successRedirect: '/',
-        failureRedirect: '/login'
-    }));
+    // authRouter.post('/login', passport.authenticate('local', {
+    //     successRedirect: '/',
+    //     failureRedirect: '/login'
+    // }));
+    authRouter.post('/register', (req, res) =>{
+        var u = new user();
+        u.username = req.body.username;
+        u.password = req.body.password;
+        u.save((err)=>{
+            if (err) throw err;
+            res.send("User creaed");
+        });
+    });
+
+    authRouter.post('/login', (req, res)=>{
+        user.findOne({
+            username : req.body.username,
+            password : req.body.password
+        }, (err, u)=>{
+            if (err) throw err;
+            if (!u) res.json({ error: "Username/password sai"});
+            else res.json({ username: req.body.username });
+        })
+    });
 
     app.use('/api', apiRouter);
     app.use('/', authRouter);

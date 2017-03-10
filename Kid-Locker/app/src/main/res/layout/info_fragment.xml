@@ -69,13 +69,15 @@
             android:layout_weight="1"
             android:background="@drawable/bg_button_login"
             android:text="Đăng ký"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite" />
 
         <Button
             android:id="@+id/btn_update"
             android:layout_weight="1"
             android:background="@drawable/bg_button_login"
             android:text="Sửa thông tin"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite" />
     </TableRow>
 </RelativeLayout>

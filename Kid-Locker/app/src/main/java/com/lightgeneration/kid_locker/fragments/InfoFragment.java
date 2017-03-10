@@ -1,5 +1,6 @@
 package com.lightgeneration.kid_locker.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,12 +10,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.lightgeneration.kid_locker.R;
+import com.lightgeneration.kid_locker.activities.RegisterInfoBabyActivity;
 
 /**
  * Created by PhamVanLong on 3/10/2017.
  */
 
-public class InfoFragment extends Fragment implements View.OnClickListener{
+public class InfoFragment extends Fragment implements View.OnClickListener {
     private Button btnSignUp;
     private Button btnUpdate;
 
@@ -37,7 +39,8 @@ public class InfoFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btn_sign_up : {
+            case R.id.btn_sign_up: {
+                registerInfoBaby();
                 break;
             }
 
@@ -49,5 +52,10 @@ public class InfoFragment extends Fragment implements View.OnClickListener{
                 break;
             }
         }
+    }
+
+    private void registerInfoBaby() {
+        Intent intent = new Intent(getActivity(), RegisterInfoBabyActivity.class);
+        startActivity(intent);
     }
 }

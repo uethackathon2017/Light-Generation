@@ -22,6 +22,10 @@
         <activity
             android:name=".activities.ComponentActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".activities.RegisterInfoBabyActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

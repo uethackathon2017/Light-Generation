@@ -38,6 +38,46 @@ module.exports = (app, passport) => {
                 res.status(404).send(`không thể lấy ra ${number} câu hỏi, nên gửi lại số câu hỏi`);
         });
     });
+    //Sửa thông tin username
+    apiRouter.put('/user/:username', (req, res) => {
+        const username = req.params.username;
+        const age      = req.body.age;
+        const name     = req.body.name;
+
+        //console.log(username + " " + age + " " + name);
+        // user.update({
+        //     username: username
+        // }, {
+        //     info: {
+        //         age : req.body.age,
+        //         name : req.body.name
+        //     }
+        // }, function(err, num, rawres){
+        //     if (err) throw err;
+        //     res.send("Done");
+        // });
+        user.findOne({
+            username: username,
+        }, (err, one) => {
+            if (err) throw err;
+            if (!one) res.send('something err');
+            
+            //console.log(one);
+            // one.info.age = req.body.age;
+            // one.info.name = req.body.name;
+            one.info = {
+                age : req.body.age,
+                name : req.body.name
+            }
+            //console.log(req.body);
+            //console.log(one);
+            one.save( (err) => {
+                if (err) throw err;
+                //console.log(one);
+                res.send('Thay đổi thông tin thành công');
+            }); 
+        });        
+    });
 
     apiRouter.post('/log', (req, res) => {
         const taskId   = req.body.taskId;

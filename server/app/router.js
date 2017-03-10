@@ -131,9 +131,13 @@ module.exports = (app, passport) => {
         var u = new user();
         u.username = req.body.username;
         u.password = req.body.password;
+        u.info = {
+            age : req.body.age,
+            name: req.body.name
+        }
         u.save((err)=>{
             if (err) throw err;
-            res.send("User creaed");
+            res.json({ status : "User created"});
         });
     });
 

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="Thông tin của bé"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/img_be" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="32dp"
+            android:text="Tên bé: Nguyễn Trọng Đông"
+            android:textColor="@color/color21"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="16dp"
+            android:text="Tuổi: 8"
+            android:textColor="@color/color21"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Bạn chưa đăng ký thông tin cho bé"
+        android:textColor="@color/color72"
+        android:textSize="18dp"
+        android:visibility="gone" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="32dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="32dp">
+
+        <Button
+            android:id="@+id/btn_sign_up"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_button_login"
+            android:text="Đăng ký"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_update"
+            android:layout_weight="1"
+            android:background="@drawable/bg_button_login"
+            android:text="Sửa thông tin"
+            android:textAllCaps="false" />
+    </TableRow>
+</RelativeLayout>

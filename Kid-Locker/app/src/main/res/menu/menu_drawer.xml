@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_lock"
+            android:icon="@drawable/ic_lock"
+            android:title="Khóa ứng dụng" />
+
+        <item
+            android:id="@+id/menu_info"
+            android:icon="@drawable/ic_info_baby"
+            android:title="Thông tin của bé" />
+
+        <item
+            android:id="@+id/menu_graph"
+            android:icon="@drawable/ic_graph"
+            android:title="Biểu đồ" />
+
+        <item
+            android:id="@+id/menu_follow"
+            android:icon="@drawable/ic_follow"
+            android:title="Theo dõi" />
+
+        <item
+            android:id="@+id/menu_setting"
+            android:icon="@drawable/ic_settings"
+            android:title="Cài đặt" />
+    </group>
+</menu>

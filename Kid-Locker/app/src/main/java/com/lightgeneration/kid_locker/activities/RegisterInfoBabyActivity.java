@@ -1,11 +1,14 @@
 package com.lightgeneration.kid_locker.activities;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.lightgeneration.kid_locker.R;
+
+import java.io.IOException;
 
 /**
  * Created by PhamVanLong on 3/10/2017.
@@ -34,8 +37,10 @@ public class RegisterInfoBabyActivity extends AppCompatActivity implements View.
             }
 
             case R.id.btn_register_info_baby: {
+
+
                 registerInfoBaby();
-                finish();
+              //  finish();
                 break;
             }
 

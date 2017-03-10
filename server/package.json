@@ -5,6 +5,15 @@
   "scripts": {
     "start": "nodemon app.js"
   },
+  "apidoc" : {
+      "name": "kid-locker-api",
+      "version": "1.0.0",
+      "description": "documentation of kid-locker",
+      "apidoc": {
+        "title": "title",
+        "url" : "https://github.com/uethackathon2017/Light-Generation"
+      }
+  },
   "dependencies": {
     "body-parser": "~1.16.0",
     "cookie-parser": "~1.4.3",

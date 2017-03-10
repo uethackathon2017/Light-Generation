@@ -100,20 +100,36 @@ module.exports = (app, passport) => {
                 });
                 break;
             case 'comparision':
-                statistics.find({
-                    username: username,
-                }).aggregate([
-                    { $match: {username: username,} }, //tìm những logs có username tương ứng
-                    { $group: {                         //aggregate
-                        category: '$category',
-                        attempts: {$sum: '$attempts'},
-                        counts  : {$sum: 1},
-                    } },
-                ]).exec((err, mess) => {
+                statistics.find({ username : username }, (err, data) => {
                     if (err) throw err;
-                    res.send(mess);
+                    let result = {};
+                    data.forEach((e) => {
+                        if (!result[e.category]) result[e.category] = {
+                            attempts : 0,
+                            correctness : 0,
+                        };
+                        if (Number(e.attempts)) {
+                            result[e.category].attempts += e.attempts;
+                            result[e.category].correctness++;
+                        }
+                    });
+                    res.send(result);
                 });
                 break;
+                // statistics.find({
+                //     username: username,
+                // }).aggregate([
+                //     { $match: {username: username,} }, //tìm những logs có username tương ứng
+                //     { $group: {                         //aggregate
+                //         category: '$category',
+                //         attempts: {$sum: '$attempts'},
+                //         counts  : {$sum: 1},
+                //     } },
+                // ]).exec((err, mess) => {
+                //     if (err) throw err;
+                //     res.send(mess);
+                // });
+                // break;
             default:
                 res.send('not found');
         }

@@ -69,14 +69,13 @@ module.exports = (app, passport) => {
         const category = req.body.category;
         const attempts = req.body.attempts;
         const username = req.body.username;
-
-        statistics.save({
-            username  : username,
-            taskId    : taskId,
-            category  : category,
-            attempts  : attempts,
-            createdAt : Date.now(),
-        }, (err, successful) => {
+        let s = new statistics();
+        s.username = username;
+        s.taskId = taskId;
+        s.category = category;
+        s.attempts = attempts;
+        s.createdAt = Date.now();
+        s.save((err) => {
             if (err) throw err;
             res.status(200).send('logged!!!');
         });

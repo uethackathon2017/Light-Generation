@@ -16,22 +16,30 @@ import com.lightgeneration.kid_locker.activities.RegisterInfoBabyActivity;
  * Created by PhamVanLong on 3/10/2017.
  */
 
-public class InfoFragment extends Fragment implements View.OnClickListener {
+public class InfoFragment extends BaseFragment implements View.OnClickListener {
     private Button btnSignUp;
     private Button btnUpdate;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.info_fragment, container, false);
-        initComponents(view);
-        return view;
+        contentView = inflater.inflate(R.layout.info_fragment, container, false);
+        return contentView;
     }
 
-    private void initComponents(View view) {
-        btnSignUp = (Button) view.findViewById(R.id.btn_sign_up);
-        btnUpdate = (Button) view.findViewById(R.id.btn_update);
+    @Override
+    protected void findViews() {
+        super.findViews();
+        btnSignUp = (Button) contentView.findViewById(R.id.btn_sign_up);
+        btnUpdate = (Button) contentView.findViewById(R.id.btn_update);
 
+
+    }
+
+
+    @Override
+    protected void declareClick() {
+        super.declareClick();
         btnSignUp.setOnClickListener(this);
         btnUpdate.setOnClickListener(this);
     }

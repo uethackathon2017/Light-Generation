@@ -1,0 +1,420 @@
+{
+	"_id" : ObjectId("58be968fabd986099067d216"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques0/practice_000.PNG",
+			"/data/counting/ques0/practice_100.PNG",
+			"/data/counting/ques0/practice_200.PNG"
+		],
+		"audio" : "/data/counting/ques0/voice_0.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d217"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques1/practice_001.PNG",
+			"/data/counting/ques1/practice_101.PNG",
+			"/data/counting/ques1/practice_201.PNG"
+		],
+		"audio" : "/data/counting/ques1/voice_1.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d218"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques2/practice_002.PNG",
+			"/data/counting/ques2/practice_102.PNG",
+			"/data/counting/ques2/practice_202.PNG"
+		],
+		"audio" : "/data/counting/ques2/voice_2.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d219"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques3/practice_003.PNG",
+			"/data/counting/ques3/practice_103.PNG",
+			"/data/counting/ques3/practice_203.PNG"
+		],
+		"audio" : "/data/counting/ques3/voice_3.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d21a"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques4/practice_004.PNG",
+			"/data/counting/ques4/practice_104.PNG",
+			"/data/counting/ques4/practice_204.PNG"
+		],
+		"audio" : "/data/counting/ques4/voice_4.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d21b"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques5/practice_005.PNG",
+			"/data/counting/ques5/practice_105.PNG",
+			"/data/counting/ques5/practice_205.PNG"
+		],
+		"audio" : "/data/counting/ques5/voice_5.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d21c"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques6/practice_006.PNG",
+			"/data/counting/ques6/practice_106.PNG",
+			"/data/counting/ques6/practice_206.PNG"
+		],
+		"audio" : "/data/counting/ques6/voice_6.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d21d"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques7/practice_007.PNG",
+			"/data/counting/ques7/practice_107.PNG",
+			"/data/counting/ques7/practice_207.PNG"
+		],
+		"audio" : "/data/counting/ques7/voice_7.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d21e"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques8/practice_008.PNG",
+			"/data/counting/ques8/practice_108.PNG",
+			"/data/counting/ques8/practice_208.PNG"
+		],
+		"audio" : "/data/counting/ques8/voice_8.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d21f"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques9/practice_009.PNG",
+			"/data/counting/ques9/practice_109.PNG",
+			"/data/counting/ques9/practice_209.PNG"
+		],
+		"audio" : "/data/counting/ques9/voice_9.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d220"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques10/practice_0010.PNG",
+			"/data/counting/ques10/practice_1010.PNG",
+			"/data/counting/ques10/practice_2010.PNG"
+		],
+		"audio" : "/data/counting/ques10/voice_10.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d221"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques11/practice_0011.PNG",
+			"/data/counting/ques11/practice_1011.PNG",
+			"/data/counting/ques11/practice_2011.PNG"
+		],
+		"audio" : "/data/counting/ques11/voice_11.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d222"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques12/practice_0012.PNG",
+			"/data/counting/ques12/practice_1012.PNG",
+			"/data/counting/ques12/practice_2012.PNG"
+		],
+		"audio" : "/data/counting/ques12/voice_12.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d223"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques13/practice_0013.PNG",
+			"/data/counting/ques13/practice_1013.PNG",
+			"/data/counting/ques13/practice_2013.PNG"
+		],
+		"audio" : "/data/counting/ques13/voice_13.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d224"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques14/practice_0014.PNG",
+			"/data/counting/ques14/practice_1014.PNG",
+			"/data/counting/ques14/practice_2014.PNG"
+		],
+		"audio" : "/data/counting/ques14/voice_14.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d225"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques15/practice_0015.PNG",
+			"/data/counting/ques15/practice_1015.PNG",
+			"/data/counting/ques15/practice_2015.PNG"
+		],
+		"audio" : "/data/counting/ques15/voice_15.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d226"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques16/practice_0016.PNG",
+			"/data/counting/ques16/practice_1016.PNG",
+			"/data/counting/ques16/practice_2016.PNG"
+		],
+		"audio" : "/data/counting/ques16/voice_16.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d227"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques17/practice_0017.PNG",
+			"/data/counting/ques17/practice_1017.PNG",
+			"/data/counting/ques17/practice_2017.PNG"
+		],
+		"audio" : "/data/counting/ques17/voice_17.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d228"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques18/practice_0018.PNG",
+			"/data/counting/ques18/practice_1018.PNG",
+			"/data/counting/ques18/practice_2018.PNG"
+		],
+		"audio" : "/data/counting/ques18/voice_18.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d229"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques19/practice_0019.PNG",
+			"/data/counting/ques19/practice_1019.PNG",
+			"/data/counting/ques19/practice_2019.PNG"
+		],
+		"audio" : "/data/counting/ques19/voice_19.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d22a"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques20/practice_0020.PNG",
+			"/data/counting/ques20/practice_1020.PNG",
+			"/data/counting/ques20/practice_2020.PNG"
+		],
+		"audio" : "/data/counting/ques20/voice_20.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d22b"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques21/practice_0021.PNG",
+			"/data/counting/ques21/practice_1021.PNG",
+			"/data/counting/ques21/practice_2021.PNG"
+		],
+		"audio" : "/data/counting/ques21/voice_21.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d22c"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques22/practice_0022.PNG",
+			"/data/counting/ques22/practice_1022.PNG",
+			"/data/counting/ques22/practice_2022.PNG"
+		],
+		"audio" : "/data/counting/ques22/voice_22.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d22d"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques23/practice_0023.PNG",
+			"/data/counting/ques23/practice_1023.PNG",
+			"/data/counting/ques23/practice_2023.PNG"
+		],
+		"audio" : "/data/counting/ques23/voice_23.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d22e"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques24/practice_0024.PNG",
+			"/data/counting/ques24/practice_1024.PNG",
+			"/data/counting/ques24/practice_2024.PNG"
+		],
+		"audio" : "/data/counting/ques24/voice_24.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d22f"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques25/practice_0025.PNG",
+			"/data/counting/ques25/practice_1025.PNG",
+			"/data/counting/ques25/practice_2025.PNG"
+		],
+		"audio" : "/data/counting/ques25/voice_25.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d230"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques26/practice_0026.PNG",
+			"/data/counting/ques26/practice_1026.PNG",
+			"/data/counting/ques26/practice_2026.PNG"
+		],
+		"audio" : "/data/counting/ques26/voice_26.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},
+{
+	"_id" : ObjectId("58be968fabd986099067d231"),
+	"category" : "counting",
+	"level" : 0,
+	"question" : {
+		"images" : [
+			"/data/counting/ques27/practice_0027.PNG",
+			"/data/counting/ques27/practice_1027.PNG",
+			"/data/counting/ques27/practice_2027.PNG"
+		],
+		"audio" : "/data/counting/ques27/voice_27.mp3",
+		"text" : null,
+		"answer" : null
+	}
+},

@@ -1,0 +1,16 @@
+# IDE
+.idea/
+
+#Dependencies
+node_modules
+
+#Compiled binary addons
+build/Release
+
+#npm cache
+.npm
+
+#log
+logs
+*.log
+npm-debug.log*

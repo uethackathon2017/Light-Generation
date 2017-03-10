@@ -1,0 +1,9 @@
+{
+	"_id" : ObjectId("58be281a7cd75d0f083327ef"),
+	"info" : {
+		"age" : 3,
+		"name" : "Nguyễn Trọng Đông"
+	},
+	"password" : "secret",
+	"username" : "meodorewan"
+},

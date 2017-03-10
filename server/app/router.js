@@ -38,20 +38,44 @@ module.exports = (app, passport) => {
                 res.status(404).send(`không thể lấy ra ${number} câu hỏi, nên gửi lại số câu hỏi`);
         });
     });
+    //Sửa thông tin username
+    apiRouter.put('/user/:username', (req, res) => {
+        const username = req.params.username;
+        const age      = req.body.age;
+        const name     = req.body.name;
+
+        user.findOne({
+            username: username,
+        }, (err, one) => {
+            if (err) throw err;
+            if (!one) res.send('something err');
+
+            one.info = {
+                age : req.body.age,
+                name : req.body.name
+            }
+
+            one.save( (err) => {
+                if (err) throw err;
+                //console.log(one);
+                res.send('Thay đổi thông tin thành công');
+            }); 
+
+        });        
+    });
 
     apiRouter.post('/log', (req, res) => {
         const taskId   = req.body.taskId;
         const category = req.body.category;
         const attempts = req.body.attempts;
         const username = req.body.username;
-
-        statistics.save({
-            username  : username,
-            taskId    : taskId,
-            category  : category,
-            attempts  : attempts,
-            createdAt : Date.now(),
-        }, (err, successful) => {
+        let s = new statistics();
+        s.username = username;
+        s.taskId = taskId;
+        s.category = category;
+        s.attempts = attempts;
+        s.createdAt = Date.now();
+        s.save((err) => {
             if (err) throw err;
             res.status(200).send('logged!!!');
         });
@@ -98,10 +122,34 @@ module.exports = (app, passport) => {
 
     //Nơi authenticate
     const authRouter = express.Router();
-    authRouter.post('/login', passport.authenticate('local', {
-        successRedirect: '/',
-        failureRedirect: '/login'
-    }));
+    // authRouter.post('/login', passport.authenticate('local', {
+    //     successRedirect: '/',
+    //     failureRedirect: '/login'
+    // }));
+    authRouter.post('/register', (req, res) =>{
+        var u = new user();
+        u.username = req.body.username;
+        u.password = req.body.password;
+        u.info = {
+            age : req.body.age,
+            name: req.body.name
+        }
+        u.save((err)=>{
+            if (err) throw err;
+            res.json({ status : "User created"});
+        });
+    });
+
+    authRouter.post('/login', (req, res)=>{
+        user.findOne({
+            username : req.body.username,
+            password : req.body.password
+        }, (err, u)=>{
+            if (err) throw err;
+            if (!u) res.json({ error: "Username/password sai"});
+            else res.json({ username: req.body.username });
+        })
+    });
 
     app.use('/api', apiRouter);
     app.use('/', authRouter);

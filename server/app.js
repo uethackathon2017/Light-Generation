@@ -22,6 +22,7 @@ else
 const app = express();
 
 app.use(express.static(__dirname + '/resources'));
+app.use(express.static(__dirname + '/doc'));
 
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({

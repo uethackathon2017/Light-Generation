@@ -199,10 +199,13 @@ exports.getLog = function(req, res) {
                username: username,
            }, (err, data) => {
                if (err) throw err;
-
+               let result = {
+                   "Nhận biết" : [],
+                   "Trái phải" : [],
+                   "Trên dưới" : [],
+                   "Tập Đếm" : []
+               };
                data.forEach((e) => {
-                   if (!result[e.category])
-                       result[e.category] = [];
                    result[e.category].push({
                        attempts: e.attempts,
                        createdAt : e.createdAt,

@@ -9,28 +9,19 @@ const authController = require('./controller/authController');
 
 module.exports = (app, passport) => {
 
-    app.get('/', apiController.getStart);
-
+    //app.get('/', apiController.getStart);
     //nơi code API
 
     const apiRouter = express.Router();
-
+    apiRouter.use(apiController.checkToken);
     apiRouter.get('/user/:username', apiController.getUserInfo);
     apiRouter.get('/questions/:userId/:number', apiController.getTasks);
     apiRouter.put('/user/:username', apiController.modifyUserInfo);
     apiRouter.post('/log', apiController.log);
     apiRouter.get('/log/:username/:typeReq', apiController.getLog);
 
-
-
-
-
     //Nơi authenticate
     const authRouter = express.Router();
-    // authRouter.post('/login', passport.authenticate('local', {
-    //     successRedirect: '/',
-    //     failureRedirect: '/login'
-    // }));
     authRouter.post('/register', authController.register);
     authRouter.post('/login', authController.login);
 

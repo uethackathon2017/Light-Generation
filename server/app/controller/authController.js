@@ -1,5 +1,4 @@
 const user       = require('../model/user');
-const passport   = require('passport');
 const task       = require('../model/task');
 const statistics = require('../model/statistics');
 /**
@@ -47,7 +46,9 @@ exports.register = function(req, res) {
 * @apiParam {String} username username
 * @apiParam {String} password password
 *
+* @apiSuccess {Bool} success true
 * @apiSuccess {String} username username
+* @apiSuccess {String} token token
 */
 exports.login = function(req, res) {
   user.findOne({
@@ -56,6 +57,15 @@ exports.login = function(req, res) {
   }, (err, u)=>{
       if (err) throw err;
       if (!u) res.json({ error: "Username/password sai"});
-      else res.json({ username: req.body.username });
+      else {
+          var token = jwt.sign(u, secret, {
+              expiresIn: 60*60*24
+          });
+          res.json({
+              success: true,
+              username: req.body.username,
+              token: token
+          });
+      }
   })
 };

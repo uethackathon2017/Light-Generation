@@ -14,6 +14,8 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.lightgeneration.kid_locker.activities.LockScreenActivity;
+import com.lightgeneration.kid_locker.activities.PassWordActivity;
+import com.lightgeneration.kid_locker.utils.Constant;
 import com.lightgeneration.kid_locker.utils.MySharedPreferences;
 
 import java.util.Date;
@@ -36,7 +38,7 @@ public class LockService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        return super.onStartCommand(intent, flags, startId);
+        return START_STICKY;
 
     }
 
@@ -68,28 +70,79 @@ public class LockService extends Service {
                currentApp=getLollipopFGAppPackageName(getApplicationContext());
                 Log.e("name",currentApp);
                 Log.e("all",MySharedPreferences.getData());
+                if(currentApp.equals("com.sec.android.app.launcher")||currentApp.equals("@@"))
+                {
+                    MySharedPreferences.putString(Constant.ON_APP,"");
+                }
+                if(MySharedPreferences.getData().contains("@@")&&currentApp.contains("@@"))
+                {
+                    return;
+                }
+
                 if(MySharedPreferences.getData().contains(currentApp))
                 {
-                    Intent i = new Intent(LockService.this, LockScreenActivity.class);
-                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(i);
+
+                    String str=MySharedPreferences.getString(Constant.ON_APP,"");
+                    if(str.equals(""))
+                    {
+                        Intent i = new Intent(LockService.this, LockScreenActivity.class);
+                        i.putExtra("namepackage",currentApp);
+                        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                       startActivity(i);
+                    }
+
+                }
+                 if(currentApp.equals("com.lightgeneration.kid_locker"))
+                {
+                    if(MySharedPreferences.isLockMyApp())
+                    {
+
+                        if(MySharedPreferences.getBoolean(Constant.ON_TEST))
+                        {
+                            return;
+                        }
+                        else {
+                            if(MySharedPreferences.isActive())
+                            {
+                                return;
+                            }
+                            else {
+                                Intent i = new Intent(LockService.this, PassWordActivity.class);
+                                i.putExtra("isInSetting",false);
+                                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(i);
+                            }
+
+                        }
+
+                    }
+
                 }
             }
             else{
                 String mpackageName = activityManager.getRunningTasks(1).get(0).topActivity.getPackageName();
                 Log.e("name",mpackageName);
-                if(mpackageName.equals("com.zing.mp3"))
+                if(MySharedPreferences.getData().contains(mpackageName))
                 {
                     Intent i = new Intent(LockService.this, LockScreenActivity.class);
+
                     i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(i);
                 }
+//                else if(mpackageName.contains("com.lightgeneration.kid_locker")&&MySharedPreferences.isLockMyApp()&&!MySharedPreferences.isActive())
+//                {
+//                    Intent i = new Intent(LockService.this, PassWordActivity.class);
+//                    i.putExtra("isInSetting",false);
+//                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                    startActivity(i);
+//                }
 
             }
         }
         }
 
         ;
+
     private static String getLollipopFGAppPackageName(Context ctx) {
 
         try {

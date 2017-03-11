@@ -24,4 +24,22 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+    <style name="AppTheme.PassWord" parent="AppTheme.NoActionBar">
+        <item name="colorPrimary">#E0E0E0</item>
+        <item name="colorPrimaryDark">#E0E0E0</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="SwitchTheme" parent="Theme.AppCompat.Light">
+
+        <item name="colorControlActivated">#009688</item>
+
+
+        <item name="colorSwitchThumbNormal">#1DE9B6</item>
+
+
+        <item name="android:colorForeground">#B2DFDB</item>
+    </style>
+
 </resources>

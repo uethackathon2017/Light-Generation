@@ -49,33 +49,25 @@ public class Diano extends ImageView{
     {
         setBackgroundResource(R.drawable.dino_true);
         final AnimationDrawable drawable= (AnimationDrawable) getBackground();
-        CustomAnimationDrawableNew drawableNew=new CustomAnimationDrawableNew(drawable) {
+        post(new Runnable() {
             @Override
-            void onAnimationFinish() {
-                doDance();
+            public void run() {
+                drawable.start();
             }
-        };
-        drawableNew.start();
-
-        invalidate();
-        requestLayout();
-
+        });
     }
     public void doFail()
     {
         setBackgroundResource(R.drawable.dino_false);
         final AnimationDrawable drawable= (AnimationDrawable) getBackground();
-        CustomAnimationDrawableNew drawableNew=new CustomAnimationDrawableNew(drawable) {
+        post(new Runnable() {
             @Override
-            void onAnimationFinish() {
-                doDance();
+            public void run() {
+                drawable.start();
             }
-        };
-
-        invalidate();
-        requestLayout();
+        });
     }
-    private void doDance()
+    public void doDance()
     {
         setBackgroundResource(R.drawable.dino_dance);
         final AnimationDrawable drawable= (AnimationDrawable) getBackground();

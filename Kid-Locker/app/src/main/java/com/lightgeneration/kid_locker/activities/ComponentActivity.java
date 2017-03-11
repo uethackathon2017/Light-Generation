@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import com.lightgeneration.kid_locker.R;
 import com.lightgeneration.kid_locker.fragments.info.InfoFragment;
 import com.lightgeneration.kid_locker.fragments.locks.LockFragment;
+import com.lightgeneration.kid_locker.utils.Constant;
+import com.lightgeneration.kid_locker.utils.MySharedPreferences;
 
 /**
  * Created by PhamVanLong on 3/10/2017.
@@ -94,6 +96,7 @@ public class ComponentActivity extends AppCompatActivity implements View.OnClick
             case R.id.menu_setting: {
                 Intent intent=new Intent(ComponentActivity.this,SettingAcitivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
                 break;
             }
 
@@ -104,6 +107,8 @@ public class ComponentActivity extends AppCompatActivity implements View.OnClick
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 
     private void openInfoFragment() {
         InfoFragment infoFragment = new InfoFragment();

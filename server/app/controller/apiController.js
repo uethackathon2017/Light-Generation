@@ -237,7 +237,7 @@ exports.getLog = function(req, res) {
                    } else {
                        result[prop].prob = corr/att * 100;
                    }
-                   result[prop].total = corr;
+                   result[prop].total = att;
                }   
                res.json(result);
            });

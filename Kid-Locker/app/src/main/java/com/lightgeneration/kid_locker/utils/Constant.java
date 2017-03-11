@@ -11,4 +11,7 @@ public class Constant {
     public static String OPEN_LOCK_MY_APP="lock_my_app";
     public static String PASS_WORD="password";
     public static String ACTIVE="active";
+    public static final int UPDATE_NEXT_QUESTION = 1;
+    public static final int FINISH_ACTIVITY_TEST = 2;
+    public static final int SET_UNCLICKABLE = 3;
 }

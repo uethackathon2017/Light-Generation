@@ -76,9 +76,14 @@ public class LockService extends Service {
                 }
                 if(MySharedPreferences.getData().contains(currentApp))
                 {
-                    Intent i = new Intent(LockService.this, LockScreenActivity.class);
-                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(i);
+                    if(MySharedPreferences.getBoolean(currentApp)==false)
+                    {
+                        Intent i = new Intent(LockService.this, LockScreenActivity.class);
+                        i.putExtra("namepackage",currentApp);
+                        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                       startActivity(i);
+                    }
+
                 }
 //                else if(currentApp.contains("com.lightgeneration.kid_locker")&&MySharedPreferences.isLockMyApp()&&!MySharedPreferences.isActive())
 //                {
@@ -94,6 +99,7 @@ public class LockService extends Service {
                 if(MySharedPreferences.getData().contains(mpackageName))
                 {
                     Intent i = new Intent(LockService.this, LockScreenActivity.class);
+
                     i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(i);
                 }

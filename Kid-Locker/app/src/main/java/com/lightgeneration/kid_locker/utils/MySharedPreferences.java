@@ -66,6 +66,10 @@ public class MySharedPreferences {
     {
         return getPreferences().getBoolean(Constant.OPEN_LOCK_MY_APP,false);
     }
+    public static boolean getBoolean(String key)
+    {
+        return getPreferences().getBoolean(key,false);
+    }
     public static boolean isActive()
     {
         return getPreferences().getBoolean(Constant.ACTIVE,false);

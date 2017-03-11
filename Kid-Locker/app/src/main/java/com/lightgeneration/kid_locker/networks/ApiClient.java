@@ -2,6 +2,7 @@ package com.lightgeneration.kid_locker.networks;
 
 import com.lightgeneration.kid_locker.models.FullQuestion;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -14,6 +15,6 @@ import retrofit2.http.Path;
 
 public interface ApiClient {
     @GET("api/questions/{username}/{count}")
-    Call<List<FullQuestion>> getAllQuestion(@Path("username") String username,@Path("count") int count);
+    Call<ArrayList<FullQuestion>> getAllQuestion(@Path("username") String username, @Path("count") int count);
 
 }

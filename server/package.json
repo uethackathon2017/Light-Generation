@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "gendoc" : "apidoc -i app/ -o doc/"
   },
   "apidoc": {
     "name": "kid-locker-api",

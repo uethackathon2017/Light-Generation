@@ -13,7 +13,7 @@ module.exports = (app, passport) => {
     //nơi code API
 
     const apiRouter = express.Router();
-    apiRouter.use(apiController.checkToken);
+    // apiRouter.use(apiController.checkToken);
     apiRouter.get('/user/:username', apiController.getUserInfo);
     apiRouter.get('/questions/:userId/:number', apiController.getTasks);
     apiRouter.put('/user/:username', apiController.modifyUserInfo);

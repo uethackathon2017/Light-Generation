@@ -228,20 +228,17 @@ exports.getLog = function(req, res) {
                        result[e.category].correctness++;
                    }
                });
-               let total = 0;
                for (let prop in result) {
                    let att = result[prop].attempts;
                    let corr = result[prop].correctness;
-
+                   result[prop] = {}; 
                    if (corr == 0)  {
-                       result[prop] = 0;
+                       result[prop].prob = 0;
                    } else {
-                       result[prop] = att / corr;
+                       result[prop].prob = corr/att * 100;
                    }
-                   total += result[prop];
-               }
-               for (let prop in result)
-                    result[prop] = result[prop] * 100 / total;
+                   result[prop].total = corr;
+               }   
                res.json(result);
            });
            break;

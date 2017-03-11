@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorWhite"
+    android:layout_height="match_parent">
+    <info.hoang8f.android.segmented.SegmentedGroup
+        android:id="@+id/rdGroup"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+       android:gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        segmentedgroup:sc_border_width="1dp"
+        segmentedgroup:sc_corner_radius="10dp"
+        segmentedgroup:sc_tint_color="#00E676"
+        segmentedgroup:sc_checked_text_color="#FFFFFF">
+
+        <RadioButton
+            android:id="@+id/rd_all_app"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:checked="true"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Danh Sách App"
+            style="@style/RadioButton" />
+
+        <RadioButton
+            android:id="@+id/rd_app_lock"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="App Đã Khóa"
+            style="@style/RadioButton" />
+    </info.hoang8f.android.segmented.SegmentedGroup>
+    <com.lightgeneration.kid_locker.custom.CustomViewPager
+        android:layout_width="match_parent"
+        android:id="@+id/view_pager"
+        android:layout_marginTop="3dp"
+        android:layout_below="@+id/rdGroup"
+        android:layout_height="match_parent"></com.lightgeneration.kid_locker.custom.CustomViewPager>
+</RelativeLayout>

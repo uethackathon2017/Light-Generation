@@ -1,4 +1,4 @@
-package com.lightgeneration.kid_locker.fragments;
+package com.lightgeneration.kid_locker.fragments.info;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import com.lightgeneration.kid_locker.R;
 import com.lightgeneration.kid_locker.activities.RegisterInfoBabyActivity;
+import com.lightgeneration.kid_locker.fragments.BaseFragment;
 
 /**
  * Created by PhamVanLong on 3/10/2017.

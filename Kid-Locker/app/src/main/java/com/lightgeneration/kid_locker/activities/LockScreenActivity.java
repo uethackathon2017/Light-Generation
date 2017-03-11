@@ -1,6 +1,7 @@
 package com.lightgeneration.kid_locker.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
@@ -23,5 +24,13 @@ public class LockScreenActivity extends AppCompatActivity{
         getSupportActionBar().hide();
 
     }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
 
+    }
 }

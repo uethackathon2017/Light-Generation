@@ -1,3 +1,3 @@
 module.exports = {
-    secret: 'ccswrsdxfggewsecret', //mã secret cho express-session
+    secret: 'lightgeneration', //mã secret cho express-session
 }

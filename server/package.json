@@ -3,16 +3,17 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "gendoc" : "apidoc -i app/ -o doc/"
   },
-  "apidoc" : {
-      "name": "kid-locker-api",
-      "version": "1.0.0",
-      "description": "documentation of kid-locker",
-      "apidoc": {
-        "title": "title",
-        "url" : "https://github.com/uethackathon2017/Light-Generation"
-      }
+  "apidoc": {
+    "name": "kid-locker-api",
+    "version": "1.0.0",
+    "description": "documentation of kid-locker",
+    "apidoc": {
+      "title": "title",
+      "url": "https://github.com/uethackathon2017/Light-Generation"
+    }
   },
   "dependencies": {
     "body-parser": "~1.16.0",
@@ -20,10 +21,12 @@
     "debug": "~2.6.0",
     "ejs": "~2.5.5",
     "express": "~4.14.1",
-    "morgan": "~1.7.0",
+    "jsonwebtoken": "^7.3.0",
+    "morgan": "^1.7.0",
     "serve-favicon": "~2.3.2"
   },
   "devDependencies": {
+    "apidoc": "^0.17.5",
     "bcrypt-nodejs": "0.0.3",
     "express-session": "^1.15.1",
     "mongoose": "^4.8.5",

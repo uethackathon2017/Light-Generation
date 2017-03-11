@@ -1,8 +1,6 @@
 const user       = require('../model/user');
-const passport   = require('passport');
 const task       = require('../model/task');
 const statistics = require('../model/statistics');
-const mongoose   = require('mongoose');
 
 /**
 * @api {get} http://54.169.225.125:3000/ Server checker
@@ -17,7 +15,7 @@ const mongoose   = require('mongoose');
 *
 * @apiSuccess {number} 200
 */
-exports.getStart = function(req, res) {
+exports.getStart = function(req, res, next) {
     res.json({ status : 200 });
 }
 
@@ -251,3 +249,26 @@ exports.getLog = function(req, res) {
            res.send('not found');
    }
 };
+
+exports.checkToken = function(req, res, next){
+    var token = req.body.token || req.query.token || req.headers['x-access-token'];
+    if (token){
+        jwt.verify(token, secret, (err, decoded)=>{
+            if (err){
+                return res.json({
+                    success: false,
+                    message: 'Failed to authenticate token'
+                });
+            } else {
+                req.decoced = decoded;
+                next();
+            }
+
+        });
+    } else {
+        return res.status(403).send({
+            success: false,
+            message: 'No token provided'
+        });
+    }
+}

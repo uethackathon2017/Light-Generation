@@ -35,6 +35,9 @@
         <activity
             android:name=".activities.RegisterInfoBabyActivity"
             android:theme="@style/AppTheme.Register" />
+        <activity android:name=".activities.SettingAcitivity"
+            android:theme="@style/AppTheme.Register"
+            ></activity>
     </application>
 
 </manifest>

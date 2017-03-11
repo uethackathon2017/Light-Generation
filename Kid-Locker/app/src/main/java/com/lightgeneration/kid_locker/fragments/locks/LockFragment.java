@@ -10,6 +10,7 @@ import android.widget.RadioGroup;
 
 import com.lightgeneration.kid_locker.R;
 import com.lightgeneration.kid_locker.adapter.ViewPagerAdapter;
+import com.lightgeneration.kid_locker.callbacks.OnLoadData;
 import com.lightgeneration.kid_locker.custom.CustomViewPager;
 import com.lightgeneration.kid_locker.fragments.BaseFragment;
 
@@ -21,11 +22,13 @@ import info.hoang8f.android.segmented.SegmentedGroup;
  * Created by Ngoc Sang on 3/11/2017.
  */
 
-public class LockFragment extends BaseFragment {
+public class LockFragment extends BaseFragment implements OnLoadData{
     private SegmentedGroup segmentedGroup;
     private CustomViewPager viewPager;
     private ViewPagerAdapter pagerAdapter;
     private ArrayList<Fragment> arrPage;
+    private AllAppFragment allAppFragment;
+    private AppLockFragment appLockFragment;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -44,8 +47,12 @@ public class LockFragment extends BaseFragment {
     protected void init() {
         super.init();
         arrPage=new ArrayList<>();
-        arrPage.add(new AllAppFragment());
-        arrPage.add(new AppLockFragment());
+        allAppFragment=new AllAppFragment();
+        appLockFragment=new AppLockFragment();
+        allAppFragment.setOnLoadData(this);
+        appLockFragment.setOnLoadData(this);
+        arrPage.add(allAppFragment);
+        arrPage.add(appLockFragment);
         pagerAdapter=new ViewPagerAdapter(getChildFragmentManager(),arrPage);
         viewPager.setAdapter(pagerAdapter);
     }
@@ -67,5 +74,18 @@ public class LockFragment extends BaseFragment {
                 }
             }
         });
+    }
+
+    @Override
+    public void loadData(int type) {
+        switch (type)
+        {
+            case 0:
+                allAppFragment.loadData();
+                break;
+            case 1:
+                appLockFragment.loadData();
+                break;
+        }
     }
 }

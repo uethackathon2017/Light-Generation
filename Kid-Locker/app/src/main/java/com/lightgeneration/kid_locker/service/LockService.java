@@ -27,7 +27,6 @@ import java.util.TimerTask;
 
 public class LockService extends Service {
     private static Timer timer = new Timer();
-    private MySharedPreferences data;
     private ActivityManager activityManager = null;
     @Nullable
     @Override
@@ -46,7 +45,7 @@ public class LockService extends Service {
         super.onCreate();
         activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
         startService();
-        data=MySharedPreferences.getInstance(getApplicationContext());
+
     }
 
     private void startService()
@@ -68,8 +67,8 @@ public class LockService extends Service {
                 String currentApp="";
                currentApp=getLollipopFGAppPackageName(getApplicationContext());
                 Log.e("name",currentApp);
-                Log.e("all",data.getData());
-                if(data.getData().contains(currentApp))
+                Log.e("all",MySharedPreferences.getData());
+                if(MySharedPreferences.getData().contains(currentApp))
                 {
                     Intent i = new Intent(LockService.this, LockScreenActivity.class);
                     i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

@@ -94,6 +94,7 @@ public class ComponentActivity extends AppCompatActivity implements View.OnClick
             case R.id.menu_setting: {
                 Intent intent=new Intent(ComponentActivity.this,SettingAcitivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
                 break;
             }
 

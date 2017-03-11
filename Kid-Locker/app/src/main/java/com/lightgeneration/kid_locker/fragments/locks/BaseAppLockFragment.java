@@ -43,11 +43,6 @@ public class BaseAppLockFragment extends BaseFragment{
         arr = new ArrayList<>();
         appAdapter = new AppAdapter(LockKidApplication.getAppContext(), R.layout.item_app, arr);
         lv.setAdapter(appAdapter);
-//        if(Build.VERSION.SDK_INT > 20)
-//        {
-//            Intent intent = new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS);
-//            startActivity(intent);
-//        }
         loadData();
     }
 

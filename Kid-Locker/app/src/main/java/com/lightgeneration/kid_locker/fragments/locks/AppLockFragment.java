@@ -18,6 +18,7 @@ import com.lightgeneration.kid_locker.models.AppInfo;
 import com.lightgeneration.kid_locker.utils.GetAppAsynTask;
 import com.lightgeneration.kid_locker.utils.LockKidApplication;
 import com.lightgeneration.kid_locker.utils.MySharedPreferences;
+import com.lightgeneration.kid_locker.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,7 @@ import java.util.List;
  * Created by Ngoc Sang on 3/11/2017.
  */
 
-public class AppLockFragment extends BaseAppLockFragment implements GetResultListener{
+public class AppLockFragment extends BaseAppLockFragment implements GetResultListener {
 
     @Override
     protected void declareClick() {
@@ -34,7 +35,13 @@ public class AppLockFragment extends BaseAppLockFragment implements GetResultLis
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
+                String data = MySharedPreferences.getData();
+                String result = data.replace(arr.get(i).getPackageName(), "");
+                result = Utils.formatString(result);
+                MySharedPreferences.editData(result);
+                arr.remove(i);
+                appAdapter.notifyDataSetChanged();
+                onLoadData.loadData(0);
             }
         });
     }
@@ -42,13 +49,15 @@ public class AppLockFragment extends BaseAppLockFragment implements GetResultLis
     @Override
     protected void loadData() {
         super.loadData();
-        new GetAppAsynTask(LockKidApplication.getAppContext(),this,true).execute();
+        new GetAppAsynTask(LockKidApplication.getAppContext(), this, true).execute();
 
     }
 
     @Override
     public void onResult(ArrayList<AppInfo> appInfos) {
+        arr.clear();
         arr.addAll(appInfos);
         appAdapter.notifyDataSetChanged();
     }
+
 }

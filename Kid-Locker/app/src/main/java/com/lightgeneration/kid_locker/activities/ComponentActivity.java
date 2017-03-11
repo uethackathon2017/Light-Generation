@@ -108,11 +108,7 @@ public class ComponentActivity extends AppCompatActivity implements View.OnClick
         return true;
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        MySharedPreferences.putBoolen(Constant.ACTIVE,false);
-    }
+
 
     private void openInfoFragment() {
         InfoFragment infoFragment = new InfoFragment();

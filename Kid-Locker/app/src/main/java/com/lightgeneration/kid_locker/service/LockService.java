@@ -38,7 +38,7 @@ public class LockService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        return super.onStartCommand(intent, flags, startId);
+        return START_STICKY;
 
     }
 
@@ -70,13 +70,20 @@ public class LockService extends Service {
                currentApp=getLollipopFGAppPackageName(getApplicationContext());
                 Log.e("name",currentApp);
                 Log.e("all",MySharedPreferences.getData());
+                if(currentApp.equals("com.sec.android.app.launcher")||currentApp.equals("@@"))
+                {
+                    MySharedPreferences.putString(Constant.ON_APP,"");
+                }
                 if(MySharedPreferences.getData().contains("@@")&&currentApp.contains("@@"))
                 {
                     return;
                 }
+
                 if(MySharedPreferences.getData().contains(currentApp))
                 {
-                    if(MySharedPreferences.getBoolean(currentApp)==false)
+
+                    String str=MySharedPreferences.getString(Constant.ON_APP,"");
+                    if(str.equals(""))
                     {
                         Intent i = new Intent(LockService.this, LockScreenActivity.class);
                         i.putExtra("namepackage",currentApp);
@@ -85,13 +92,32 @@ public class LockService extends Service {
                     }
 
                 }
-//                else if(currentApp.contains("com.lightgeneration.kid_locker")&&MySharedPreferences.isLockMyApp()&&!MySharedPreferences.isActive())
-//                {
-//                    Intent i = new Intent(LockService.this, PassWordActivity.class);
-//                    i.putExtra("isInSetting",false);
-//                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                    startActivity(i);
-//                }
+                 if(currentApp.equals("com.lightgeneration.kid_locker"))
+                {
+                    if(MySharedPreferences.isLockMyApp())
+                    {
+
+                        if(MySharedPreferences.getBoolean(Constant.ON_TEST))
+                        {
+                            return;
+                        }
+                        else {
+                            if(MySharedPreferences.isActive())
+                            {
+                                return;
+                            }
+                            else {
+                                Intent i = new Intent(LockService.this, PassWordActivity.class);
+                                i.putExtra("isInSetting",false);
+                                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(i);
+                            }
+
+                        }
+
+                    }
+
+                }
             }
             else{
                 String mpackageName = activityManager.getRunningTasks(1).get(0).topActivity.getPackageName();
@@ -116,6 +142,7 @@ public class LockService extends Service {
         }
 
         ;
+
     private static String getLollipopFGAppPackageName(Context ctx) {
 
         try {

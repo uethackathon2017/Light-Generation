@@ -4,90 +4,90 @@
 
     <item
         android:drawable="@drawable/dino_false_00"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_01"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_02"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_03"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_04"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_05"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_06"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_07"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_08"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_09"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_10"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_11"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_12"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_13"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_14"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_15"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_16"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_17"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_18"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_19"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_20"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_21"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_22"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_23"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_24"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_25"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_26"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_27"
-        android:duration="100"/>
+        android:duration="50"/>
     <item
         android:drawable="@drawable/dino_false_28"
-        android:duration="100"/>
+        android:duration="50"/>
 
 </animation-list>

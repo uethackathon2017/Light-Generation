@@ -32,6 +32,10 @@ public class MySharedPreferences {
     {
         getEditor().putString(key,value).commit();
     }
+    public static void clearAppOn()
+    {
+        getEditor().remove(Constant.ON_APP).commit();
+    }
     public static void addData(String name)
     {
 

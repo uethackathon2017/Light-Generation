@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.lightgeneration.kid_locker.R;
+import com.lightgeneration.kid_locker.utils.Constant;
+import com.lightgeneration.kid_locker.utils.MySharedPreferences;
 
 public class MainActivity extends AppCompatActivity {
     private Button btnLogin;
@@ -31,5 +33,16 @@ public class MainActivity extends AppCompatActivity {
     private void login() {
         Intent intent = new Intent(this, ComponentActivity.class);
         startActivity(intent);
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        MySharedPreferences.putBoolen(Constant.ACTIVE,false);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        MySharedPreferences.putBoolen(Constant.ACTIVE,true);
     }
 }

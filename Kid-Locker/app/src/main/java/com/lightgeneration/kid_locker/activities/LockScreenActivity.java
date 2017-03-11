@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.lightgeneration.kid_locker.R;
+import com.lightgeneration.kid_locker.custom.Diano;
 import com.lightgeneration.kid_locker.models.FullQuestion;
 import com.lightgeneration.kid_locker.models.Question;
 import com.lightgeneration.kid_locker.musics.MusicPlayer;
@@ -78,7 +79,7 @@ public class LockScreenActivity extends AppCompatActivity implements Runnable, V
     private int timeNextQues;
     private Boolean isFirstPlay;
 
-
+    private Diano diano;
     private int voiceId[] = {R.raw.voice_true_2, R.raw.voice_true_3, R.raw.voice_true_4};
     private int bgId[] = {R.drawable.background_00, R.drawable.background_01, R.drawable.background_02,
             R.drawable.background_03, R.drawable.background_04, R.drawable.background_05,
@@ -103,7 +104,7 @@ public class LockScreenActivity extends AppCompatActivity implements Runnable, V
         packageName=getIntent().getStringExtra("namepackage");
         txtCategoryQues = (TextView) findViewById(R.id.tv_category_question);
         txtTextQues = (TextView) findViewById(R.id.tv_text_question);
-
+        diano=(Diano)findViewById(R.id.diano);
         ansHori1 = (RelativeLayout) findViewById(R.id.ans_hori_1);
         ansHori2 = (RelativeLayout) findViewById(R.id.ans_hori_2);
         ansHori3 = (RelativeLayout) findViewById(R.id.ans_hori_3);
@@ -280,6 +281,18 @@ public class LockScreenActivity extends AppCompatActivity implements Runnable, V
         musicPlayer.play();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        MySharedPreferences.putBoolen(Constant.ON_TEST,true);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        MySharedPreferences.putBoolen(Constant.ON_TEST,false);
+    }
+
     private void setAllClickable(boolean b) {
         ansHori1.setClickable(b);
         ansHori2.setClickable(b);
@@ -302,13 +315,17 @@ public class LockScreenActivity extends AppCompatActivity implements Runnable, V
                     }
 
                     case Constant.FINISH_ACTIVITY_TEST: {
-                        MySharedPreferences.putBoolen(packageName,true);
+                        MySharedPreferences.putString(Constant.ON_APP,packageName);
                         finish();
                         break;
                     }
+                    case Constant.ANSWER_FAIL:
+                        diano.doFail();
+                        break;
 
                     case Constant.SET_UNCLICKABLE: {
                         setAllClickable(false);
+                        diano.doTrue();
                         break;
                     }
 
@@ -357,6 +374,7 @@ public class LockScreenActivity extends AppCompatActivity implements Runnable, V
             if (ans != -1) {
                 if (ans == question.getAnswer()) {
                     isNextQues = true;
+
                     MusicPlayer mpTrue1 = new MusicPlayer(R.raw.voice_true_1, LockScreenActivity.this);
                     MusicPlayer mpTrue2 = new MusicPlayer(voiceId, LockScreenActivity.this);
                     mpTrue1.play();
@@ -364,10 +382,12 @@ public class LockScreenActivity extends AppCompatActivity implements Runnable, V
                     ans = -1;
                     timeNextQues = -1;
                     handlerChangeUI.sendEmptyMessage(Constant.SET_UNCLICKABLE);
+
                 } else {
                     MusicPlayer mpFalse = new MusicPlayer(R.raw.voice_false, LockScreenActivity.this);
                     mpFalse.play();
                     ans = -1;
+                    handlerChangeUI.sendEmptyMessage(Constant.ANSWER_FAIL);
                 }
             }
             try {

@@ -199,10 +199,13 @@ exports.getLog = function(req, res) {
                username: username,
            }, (err, data) => {
                if (err) throw err;
-
+               let result = {
+                   "Nhận biết" : [],
+                   "Trái phải" : [],
+                   "Trên dưới" : [],
+                   "Tập Đếm" : []
+               };
                data.forEach((e) => {
-                   if (!result[e.category])
-                       result[e.category] = [];
                    result[e.category].push({
                        attempts: e.attempts,
                        createdAt : e.createdAt,
@@ -217,31 +220,47 @@ exports.getLog = function(req, res) {
        case 'comparision':
            statistics.find({ username : username }, (err, data) => {
                if (err) res.send('Error');
-               let result = {};
+               let result = {
+                   "Nhận biết" : {
+                       prob: 0,
+                       total: 0
+                   },
+                   "Trái phải" : {
+                       prob: 0,
+                       total: 0
+                   },
+                   "Trên dưới" : {
+                       prob: 0,
+                       total: 0
+                   },
+                   "Tập Đếm" : {
+                       prob: 0,
+                       total: 0
+                   }
+               };
+               let temp = {};
                data.forEach((e) => {
-                   if (!result[e.category]) result[e.category] = {
+                   if (!temp[e.category]) temp[e.category] = {
                        attempts : 0,
                        correctness : 0,
                    };
                    if (Number(e.attempts)) {
-                       result[e.category].attempts += e.attempts;
-                       result[e.category].correctness++;
+                       temp[e.category].attempts += e.attempts;
+                       temp[e.category].correctness++;
                    }
                });
-               let total = 0;
                for (let prop in result) {
-                   let att = result[prop].attempts;
-                   let corr = result[prop].correctness;
-
+                   let att = (temp[prop] && temp[prop].attempts) || 0;
+                   let corr = (temp[prop] && temp[prop].correctness) || 0;
+                   //console.log(prop);
+                   //console.log(att + " " + corr);
                    if (corr == 0)  {
-                       result[prop] = 0;
+                       result[prop].prob = 0;
                    } else {
-                       result[prop] = att / corr;
+                       result[prop].prob = corr/att * 100;
                    }
-                   total += result[prop];
-               }
-               for (let prop in result)
-                    result[prop] = result[prop] * 100 / total;
+                   result[prop].total = att;
+               }   
                res.json(result);
            });
            break;

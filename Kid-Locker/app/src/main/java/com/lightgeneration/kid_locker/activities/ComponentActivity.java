@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import com.lightgeneration.kid_locker.R;
 import com.lightgeneration.kid_locker.fragments.info.InfoFragment;
 import com.lightgeneration.kid_locker.fragments.locks.LockFragment;
+import com.lightgeneration.kid_locker.utils.Constant;
+import com.lightgeneration.kid_locker.utils.MySharedPreferences;
 
 /**
  * Created by PhamVanLong on 3/10/2017.
@@ -104,6 +106,12 @@ public class ComponentActivity extends AppCompatActivity implements View.OnClick
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        MySharedPreferences.putBoolen(Constant.ACTIVE,false);
     }
 
     private void openInfoFragment() {

@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
 import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.lightgeneration.kid_locker.R;
@@ -23,13 +24,20 @@ import com.lightgeneration.kid_locker.utils.MySharedPreferences;
 public class SettingAcitivity extends AppCompatActivity {
     private SwitchCompat switchCompat,switchOpenLockApp;
   private RelativeLayout changePass;
+    private ImageView btnBack;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.setting_activity);
-        switchCompat = (SwitchCompat) findViewById(R.id.switch_btn);
-        switchOpenLockApp=(SwitchCompat)findViewById(R.id.switch_btn_lock_app);
-        changePass=(RelativeLayout)findViewById(R.id.rl_change_pass);
+        findViews();
+        init();
+        declareClick();
+
+
+
+    }
+    private void init()
+    {
         if (MySharedPreferences.isLockApp()) {
             switchCompat.setChecked(true);
 
@@ -39,6 +47,23 @@ public class SettingAcitivity extends AppCompatActivity {
             switchOpenLockApp.setChecked(true);
             changePass.setVisibility(View.VISIBLE);
         }
+    }
+    private void findViews()
+    {
+        switchCompat = (SwitchCompat) findViewById(R.id.switch_btn);
+        switchOpenLockApp=(SwitchCompat)findViewById(R.id.switch_btn_lock_app);
+        changePass=(RelativeLayout)findViewById(R.id.rl_change_pass);
+        btnBack=(ImageView)findViewById(R.id.btn_back_setting);
+    }
+    private void declareClick()
+    {
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
+            }
+        });
         switchOpenLockApp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -46,16 +71,16 @@ public class SettingAcitivity extends AppCompatActivity {
                 {
                     if(!MySharedPreferences.isLockMyApp())
                     {
-                       MySharedPreferences.putBoolen(Constant.OPEN_LOCK_MY_APP,true);
+                        MySharedPreferences.putBoolen(Constant.OPEN_LOCK_MY_APP,true);
                         startScreenPassWord();
 
                     }
                 }
                 else {
-                   if(MySharedPreferences.isLockMyApp())
-                   {
-                       MySharedPreferences.putBoolen(Constant.OPEN_LOCK_MY_APP,false);
-                   }
+                    if(MySharedPreferences.isLockMyApp())
+                    {
+                        MySharedPreferences.putBoolen(Constant.OPEN_LOCK_MY_APP,false);
+                    }
                 }
 
             }
@@ -76,11 +101,11 @@ public class SettingAcitivity extends AppCompatActivity {
 
 
                 } else {
-                  if(MySharedPreferences.isLockApp())
-                  {
-                      MySharedPreferences.putBoolen(Constant.OPEN_LOCK_APP,false);
-                      stopLockService();
-                  }
+                    if(MySharedPreferences.isLockApp())
+                    {
+                        MySharedPreferences.putBoolen(Constant.OPEN_LOCK_APP,false);
+                        stopLockService();
+                    }
                 }
             }
         });
@@ -104,6 +129,7 @@ public class SettingAcitivity extends AppCompatActivity {
     private void startScreenPassWord()
     {
       Intent intent=new Intent(SettingAcitivity.this,PassWordActivity.class);
+        intent.putExtra("isInSetting",true);
         startActivity(intent);
         overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
     }

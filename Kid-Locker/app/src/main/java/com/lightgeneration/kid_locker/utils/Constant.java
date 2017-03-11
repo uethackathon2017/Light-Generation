@@ -9,4 +9,6 @@ public class Constant {
     public static String OPEN_LOCK_APP="isLock";
     public static String ALL_APP_LOCKED="app_locked";
     public static String OPEN_LOCK_MY_APP="lock_my_app";
+    public static String PASS_WORD="password";
+    public static String ACTIVE="active";
 }

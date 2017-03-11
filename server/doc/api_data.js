@@ -52,7 +52,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "app/router.js",
+    "filename": "app/controller/authController.js",
     "groupTitle": "Authentication"
   },
   {
@@ -122,7 +122,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "app/router.js",
+    "filename": "app/controller/authController.js",
     "groupTitle": "Authentication"
   },
   {
@@ -158,7 +158,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "app/router.js",
+    "filename": "app/controller/apiController.js",
     "groupTitle": "Common"
   },
   {
@@ -228,7 +228,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "app/router.js",
+    "filename": "app/controller/apiController.js",
     "groupTitle": "Log"
   },
   {
@@ -255,30 +255,30 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "[Object]",
+            "type": "Object",
             "optional": false,
-            "field": "category",
+            "field": "object",
             "description": "<p>tập đếm, nhận biết...</p>"
           },
           {
             "group": "Success 200",
             "type": "Number",
             "optional": false,
-            "field": "category.attempts",
+            "field": "object.attempts",
             "description": "<p>the total number of attemptions before correct answers</p>"
           },
           {
             "group": "Success 200",
             "type": "Number",
             "optional": false,
-            "field": "category.correctness",
-            "description": "<p>the number of correct answers</p>"
+            "field": "object.createdAt",
+            "description": "<p>timeline</p>"
           }
         ]
       }
     },
     "version": "0.0.0",
-    "filename": "app/router.js",
+    "filename": "app/controller/apiController.js",
     "groupTitle": "User"
   },
   {
@@ -342,7 +342,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "app/router.js",
+    "filename": "app/controller/apiController.js",
     "groupTitle": "User"
   },
   {
@@ -434,7 +434,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "app/router.js",
+    "filename": "app/controller/apiController.js",
     "groupTitle": "User"
   },
   {
@@ -490,7 +490,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "app/router.js",
+    "filename": "app/controller/apiController.js",
     "groupTitle": "User"
   }
 ] });

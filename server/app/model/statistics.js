@@ -1,7 +1,7 @@
 const mongoose              = require('mongoose');
 
 const statSchema = mongoose.Schema({
-    taskId      : mongoose.Schema.Types.ObjectId,
+    taskId      : String,//mongoose.Schema.Types.ObjectId,
     username    : String,
     category    : String,
     attempts    : Number,

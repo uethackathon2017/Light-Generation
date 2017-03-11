@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:background="@color/colorWhite"
     android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Đang tải dữ liệu..."
+        android:textSize="24dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/tv_lock"
+        android:layout_height="match_parent" />
 <ListView
     android:layout_width="match_parent"
     android:id="@+id/lvAllApp"
+    android:visibility="gone"
+    android:background="@color/colorWhite"
     android:layout_height="match_parent"></ListView>
-</RelativeLayout>
+</FrameLayout>

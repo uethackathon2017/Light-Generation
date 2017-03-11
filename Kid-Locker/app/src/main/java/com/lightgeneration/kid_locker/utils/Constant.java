@@ -13,6 +13,9 @@ public class Constant {
     public static String ACTIVE="active";
     public static String ON_APP="on_app";
     public static String ON_TEST="on_test";
+    public static String IS_LOGIN="is_login";
+    public static String NUMBER_QUESTION="number_question";
+    public static String USER_NAME="user_name";
     public static final int UPDATE_NEXT_QUESTION = 1;
     public static final int FINISH_ACTIVITY_TEST = 2;
     public static final int SET_UNCLICKABLE = 3;

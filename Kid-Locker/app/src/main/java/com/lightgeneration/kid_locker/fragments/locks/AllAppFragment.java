@@ -54,6 +54,7 @@ public class AllAppFragment extends BaseAppLockFragment implements GetResultList
 
     @Override
     public void onResult(ArrayList<AppInfo> appInfos) {
+        lv.setVisibility(View.VISIBLE);
         arr.clear();
         arr.addAll(appInfos);
         appAdapter.notifyDataSetChanged();

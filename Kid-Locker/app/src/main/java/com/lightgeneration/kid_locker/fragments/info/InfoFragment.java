@@ -3,14 +3,12 @@ package com.lightgeneration.kid_locker.fragments.info;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.lightgeneration.kid_locker.R;
-import com.lightgeneration.kid_locker.activities.RegisterInfoBabyActivity;
 import com.lightgeneration.kid_locker.fragments.BaseFragment;
 
 /**
@@ -64,7 +62,6 @@ public class InfoFragment extends BaseFragment implements View.OnClickListener {
     }
 
     private void registerInfoBaby() {
-        Intent intent = new Intent(getActivity(), RegisterInfoBabyActivity.class);
-        startActivity(intent);
+
     }
 }

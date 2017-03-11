@@ -1,55 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_vertical"
-    android:orientation="vertical">
-
-    <EditText
-        android:id="@+id/edt_username"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:hint="Username" />
-
-    <EditText
-        android:id="@+id/edt_password"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
-        android:hint="Password"
-        android:inputType="textPassword" />
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp">
-
+        android:background="@color/colorBackgroundApp"
+        android:layout_height="match_parent">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="220dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:id="@+id/img_login"
+            android:src="@drawable/bg_login"
+            android:layout_height="220dp" />
         <RelativeLayout
-            android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:id="@+id/rl_edit_text"
+            android:layout_below="@+id/img_login"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/edt_username"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:hint="Username" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="Đăng ký"
-                android:textColor="#009688"
+            <EditText
+                android:id="@+id/edt_password"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_below="@+id/edt_username"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:hint="Password"
+                android:inputType="textPassword" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/rl_edit_text"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="90dp"
+                android:gravity="center"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_button_login"
+                android:text="Đăng kí"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="16dp" />
+            <Button
+                android:id="@+id/btn_login"
+                 android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@+id/btn_register"
+                android:background="@drawable/bg_button_login"
+                android:text="Đăng nhập"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
                 android:textSize="16dp" />
         </RelativeLayout>
+    </RelativeLayout>
+   <!-- <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btn_login"
-            android:layout_weight="1"
-            android:background="@drawable/bg_button_login"
-            android:text="Đăng nhập"
-            android:textAllCaps="false"
-            android:textColor="#ffffff"
-            android:textSize="16dp" />
-    </TableRow>
-</LinearLayout>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp">
+
+            <RelativeLayout
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Đăng ký"
+                    android:textColor="#009688"
+                    android:textSize="16dp" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button_login"
+                android:text="Đăng nhập"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="16dp" />
+        </TableRow>
+    </LinearLayout>-->
+</ScrollView>

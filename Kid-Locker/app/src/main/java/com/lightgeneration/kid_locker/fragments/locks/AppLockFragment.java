@@ -55,9 +55,17 @@ public class AppLockFragment extends BaseAppLockFragment implements GetResultLis
 
     @Override
     public void onResult(ArrayList<AppInfo> appInfos) {
-        arr.clear();
-        arr.addAll(appInfos);
-        appAdapter.notifyDataSetChanged();
+        if(appInfos.size()==0)
+        {
+            textView.setText("Danh Sách Rỗng !");
+        }
+        else {
+            lv.setVisibility(View.VISIBLE);
+            arr.clear();
+            arr.addAll(appInfos);
+            appAdapter.notifyDataSetChanged();
+        }
+
     }
 
 }

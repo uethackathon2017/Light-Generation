@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.lightgeneration.kid_locker.R;
 import com.lightgeneration.kid_locker.adapter.AppAdapter;
@@ -26,6 +27,7 @@ public class BaseAppLockFragment extends BaseFragment{
     protected ArrayList<AppInfo> arr;
     protected OnLoadData onLoadData;
     protected AppAdapter appAdapter;
+    protected TextView textView;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class BaseAppLockFragment extends BaseFragment{
     protected void findViews() {
         super.findViews();
         lv=(ListView)contentView.findViewById(R.id.lvAllApp);
+        textView=(TextView)contentView.findViewById(R.id.tv_lock);
     }
     @Override
     protected void init() {

@@ -339,7 +339,7 @@ public class LockScreenActivity extends AppCompatActivity implements Runnable, V
 
     private void loadQuestions() {
         ApiClient apiClient = ApiClientUtils.getApiClient();
-        apiClient.getAllQuestion("meodorewan", 10).enqueue(new Callback<ArrayList<FullQuestion>>() {
+        apiClient.getAllQuestion(MySharedPreferences.getString(Constant.USER_NAME,""),MySharedPreferences.getInt(Constant.NUMBER_QUESTION,10)).enqueue(new Callback<ArrayList<FullQuestion>>() {
             @Override
             public void onResponse(Call<ArrayList<FullQuestion>> call, Response<ArrayList<FullQuestion>> response) {
                 fullQuestions = response.body();

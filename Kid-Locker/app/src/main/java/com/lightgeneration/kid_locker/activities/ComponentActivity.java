@@ -14,8 +14,10 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.lightgeneration.kid_locker.R;
+import com.lightgeneration.kid_locker.fragments.graphs.GraphFragment;
 import com.lightgeneration.kid_locker.fragments.info.InfoFragment;
 import com.lightgeneration.kid_locker.fragments.locks.LockFragment;
+import com.lightgeneration.kid_locker.fragments.subcribe.SubCribeFragment;
 import com.lightgeneration.kid_locker.utils.Constant;
 import com.lightgeneration.kid_locker.utils.MySharedPreferences;
 
@@ -42,6 +44,19 @@ public class ComponentActivity extends AppCompatActivity implements View.OnClick
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        openLockFragment();
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        if(drawerLayout.isDrawerOpen(GravityCompat.START))
+        {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        else {
+            super.onBackPressed();
+        }
     }
 
     @Override
@@ -59,16 +74,15 @@ public class ComponentActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void replaceFragment(Fragment fragment) {
-        if (fragment.isVisible()) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.rl_content, fragment)
-                    .commit();
-            return;
-        }
+//        if (fragment.isVisible()) {
+//            getSupportFragmentManager().beginTransaction()
+//                    .replace(R.id.rl_content, fragment)
+//                    .commit();
+//            return;
+//        }
 
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.rl_content, fragment)
-                .addToBackStack(null)
                 .commit();
     }
 
@@ -86,10 +100,12 @@ public class ComponentActivity extends AppCompatActivity implements View.OnClick
             }
 
             case R.id.menu_graph: {
+                openGraphFragment();
                 break;
             }
 
             case R.id.menu_follow: {
+                openSubcribeFragment();
                 break;
             }
 
@@ -118,5 +134,15 @@ public class ComponentActivity extends AppCompatActivity implements View.OnClick
     {
         LockFragment lockFragment=new LockFragment();
         replaceFragment(lockFragment);
+    }
+    private void openGraphFragment()
+    {
+        GraphFragment graphFragment=new GraphFragment();
+        replaceFragment(graphFragment);
+    }
+    private void openSubcribeFragment()
+    {
+        SubCribeFragment subCribeFragment=new SubCribeFragment();
+        replaceFragment(subCribeFragment);
     }
 }

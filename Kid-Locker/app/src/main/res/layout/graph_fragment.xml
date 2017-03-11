@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorWhite"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <com.eralp.circleprogressview.CircleProgressView
+        android:id="@+id/circle_progress_view"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_gravity="center"
+        app:cpv_circle_color="#27375c"
+        app:cpv_circle_width="6dp"
+        app:cpv_background_circle_width="1dp"
+        app:cpv_background_circle_color="#5b253048"
+        app:cpv_text_prefix="%"
+        app:cpv_text_size="40"
+        app:cpv_text_color="#27375c"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/tv_recogn"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
+</RelativeLayout>

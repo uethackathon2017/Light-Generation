@@ -19,6 +19,11 @@ android {
     }
 }
 
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+}
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -34,5 +39,8 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.takwolf.android:lock9view:0.0.11'
     compile 'info.hoang8f:android-segmented:1.0.6'
+    compile 'com.github.silvestrpredko:dot-progress-bar:0.1.4@aar'
+    compile 'com.github.eralpyucel:CircleProgressView:v1.1'
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.1'
     testCompile 'junit:junit:4.12'
 }

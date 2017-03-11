@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
 
     <ImageView
         android:id="@+id/ic_close_test"
@@ -15,20 +16,21 @@
 
     <ImageView
         android:id="@+id/ic_volume"
-        android:src="@drawable/ic_volume"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_toRightOf="@id/ic_close_test"
-        android:layout_width="48dp"
-        android:layout_height="48dp" />
+        android:src="@drawable/ic_volume" />
 
     <TextView
         android:id="@+id/tv_category_question"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Gia đình"
-        android:textSize="20dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:textColor="#9C27B0"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/tv_text_question"
@@ -36,9 +38,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_category_question"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="Đố bé biết đâu là đôi đũa?"
-        android:textColor="@color/colorAccent" />
+        android:layout_marginTop="16dp"
+        android:textColor="#FF5722"
+        android:textSize="20sp" />
 
     <com.lightgeneration.kid_locker.custom.Diano
         android:id="@+id/diano"
@@ -70,60 +72,52 @@
                 android:id="@+id/ans_hori_1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/background_00">
+                android:layout_weight="1">
 
                 <ImageView
                     android:id="@+id/img_ans_hori_1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/dino_dance_00" />
+                    android:layout_centerInParent="true" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/ans_hori_2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/background_00">
+                android:layout_weight="1">
 
                 <ImageView
                     android:id="@+id/img_ans_hori_2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/dino_dance_00" />
+                    android:layout_centerInParent="true" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/ans_hori_3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/background_00">
+                android:layout_weight="1">
 
                 <ImageView
                     android:id="@+id/img_ans_hori_3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/dino_dance" />
+                    android:layout_centerInParent="true" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/ans_hori_4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/background_00">
+                android:layout_weight="1">
 
                 <ImageView
                     android:id="@+id/img_ans_hori_4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/dino_dance" />
+                    android:layout_centerInParent="true" />
             </RelativeLayout>
         </LinearLayout>
 
@@ -140,15 +134,13 @@
                 android:layout_height="0dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_00">
+                android:layout_weight="1">
 
                 <ImageView
                     android:id="@+id/img_ans_verti_1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/dino_dance_00" />
+                    android:layout_centerInParent="true" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -157,15 +149,13 @@
                 android:layout_height="0dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_00">
+                android:layout_weight="1">
 
                 <ImageView
                     android:id="@+id/img_ans_verti_2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/dino_dance_00" />
+                    android:layout_centerInParent="true" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -174,15 +164,13 @@
                 android:layout_height="0dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_00">
+                android:layout_weight="1">
 
                 <ImageView
                     android:id="@+id/img_ans_verti_3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/dino_dance" />
+                    android:layout_centerInParent="true" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -191,15 +179,13 @@
                 android:layout_height="0dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_00">
+                android:layout_weight="1">
 
                 <ImageView
                     android:id="@+id/img_ans_verti_4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/dino_dance" />
+                    android:layout_centerInParent="true" />
             </RelativeLayout>
         </LinearLayout>
     </FrameLayout>

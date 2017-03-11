@@ -182,9 +182,9 @@ exports.log = function(req, res) {
 * http://54.169.225.125:3000/api/log/meodorewan/comparision
 * http://54.169.225.125:3000/api/log/meodorewan/progression
 *
-* @apiSuccess {[Object]} category tập đếm, nhận biết...
-* @apiSuccess {Number} category.attempts the total number of attemptions before correct answers
-* @apiSuccess {Number} category.correctness the number of correct answers
+* @apiSuccess {Object} object tập đếm, nhận biết...
+* @apiSuccess {Number} object.attempts the total number of attemptions before correct answers
+* @apiSuccess {Number} object.createdAt timeline
 */
 
 exports.getLog = function(req, res) {
@@ -199,13 +199,21 @@ exports.getLog = function(req, res) {
        case 'progression':
            statistics.find({
                username: username,
-           }).sort({ category : 1 }).exec((err, mess) => {
-               if (err) res.send('Error');
-               mess.forEach((e) => {
-                   if (!result[e.category]) result[e.category] = [];
-                   result[e.category].push(e.attempts);
+           }, (err, data) => {
+               if (err) throw err;
+
+               data.forEach((e) => {
+                   if (!result[e.category])
+                       result[e.category] = [];
+                   result[e.category].push({
+                       attempts: e.attempts,
+                       createdAt : e.createdAt,
+                   });
                });
-               res.json(mess);
+               for (let prop in result) {
+                   result[prop].sort((a , b)=> a.createdAt - b.createdAt);
+               }
+               res.json(result);
            });
            break;
        case 'comparision':
@@ -222,6 +230,20 @@ exports.getLog = function(req, res) {
                        result[e.category].correctness++;
                    }
                });
+               let total = 0;
+               for (let prop in result) {
+                   let att = result[prop].attempts;
+                   let corr = result[prop].correctness;
+
+                   if (corr == 0)  {
+                       result[prop] = 0;
+                   } else {
+                       result[prop] = att / corr;
+                   }
+                   total += result[prop];
+               }
+               for (let prop in result)
+                    result[prop] = result[prop] * 100 / total;
                res.json(result);
            });
            break;

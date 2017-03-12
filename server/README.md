@@ -1,7 +1,7 @@
 Kid-locker API server
 =============
 
-Kid-locker API server using NodeJS, ExpressJS and MongoDB
+Kid-locker API server using NodeJS, ExpressJS and MongoDB, hosted on Aws
 
 
 Getting started

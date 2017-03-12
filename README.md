@@ -1,5 +1,7 @@
 # Kid-locker 
 
+##### A complete solution to manage kid's technology-using 
+
 ### Getting started
 1.Dependencies
 

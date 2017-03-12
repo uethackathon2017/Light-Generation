@@ -3,6 +3,7 @@ package com.lightgeneration.kid_locker.networks;
 import com.lightgeneration.kid_locker.models.Account;
 import com.lightgeneration.kid_locker.models.FullQuestion;
 import com.lightgeneration.kid_locker.models.ItemComparision;
+import com.lightgeneration.kid_locker.models.ObjectProgress;
 import com.lightgeneration.kid_locker.models.ResponceAccount;
 import com.lightgeneration.kid_locker.models.ResponceLogin;
 import com.lightgeneration.kid_locker.models.User;
@@ -33,5 +34,7 @@ public interface ApiClient {
     Call<ItemComparision> getComparison(@Path("username") String userName);
     @PUT("api/user/{username}/{age}")
     Call<ResponceAccount> editInfo(@Path("username") String username,@Path("age") int age);
+    @GET("api/log/{username}/progression")
+    Call<ObjectProgress> getProgression(@Path("username") String username);
 
 }

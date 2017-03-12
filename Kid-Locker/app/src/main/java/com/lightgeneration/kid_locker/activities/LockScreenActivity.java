@@ -355,7 +355,6 @@ public class LockScreenActivity extends AppCompatActivity implements Runnable, V
             @Override
             public void onResponse(Call<ArrayList<FullQuestion>> call, Response<ArrayList<FullQuestion>> response) {
                 fullQuestions = response.body();
-                Toast.makeText(LockScreenActivity.this, "Load xong cmr", Toast.LENGTH_LONG).show();
                 playTest();
             }
 

@@ -62,7 +62,6 @@ public class GraphFragment extends BaseFragment{
                 itemComparision=response.body();
                 fillData(itemComparision);
                 progress.dismiss();
-                Toast.makeText(LockKidApplication.getAppContext(),"Thành công!",Toast.LENGTH_LONG).show();
             }
 
             @Override

@@ -34,7 +34,7 @@
 <RelativeLayout
     android:layout_width="match_parent"
     android:id="@+id/rl_open_lock"
-    android:layout_height="40dp">
+    android:layout_height="50dp">
     <TextView
         android:layout_width="wrap_content"
         android:layout_centerVertical="true"
@@ -57,14 +57,14 @@
     <View
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true"
-        android:background="@color/color21"
+        android:background="#CFD8DC"
         android:layout_height="1dp"></View>
 </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_below="@+id/rl_open_lock"
             android:id="@+id/rl_open_lock_my_app"
-            android:layout_height="40dp">
+            android:layout_height="50dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_centerVertical="true"
@@ -87,10 +87,10 @@
             android:layout_width="match_parent"
            android:layout_below="@+id/rl_open_lock_my_app"
             android:id="@+id/rl_change_pass"
-            android:layout_height="40dp">
+            android:layout_height="50dp">
             <View
                 android:layout_width="match_parent"
-                android:background="@color/color21"
+                android:background="#CFD8DC"
                 android:layout_alignParentTop="true"
                 android:layout_height="1dp"></View>
             <TextView
@@ -106,7 +106,7 @@
                 android:src="@drawable/next"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="15dp"
                 android:layout_height="wrap_content" />
         </RelativeLayout>
         <RelativeLayout
@@ -114,10 +114,10 @@
             android:layout_below="@+id/rl_change_pass"
               android:id="@+id/rl_log_out"
 
-            android:layout_height="40dp">
+            android:layout_height="50dp">
             <View
                 android:layout_width="match_parent"
-                android:background="@color/color21"
+                android:background="#CFD8DC"
                 android:layout_height="1dp"></View>
             <TextView
                 android:layout_width="wrap_content"
@@ -127,6 +127,18 @@
                 android:text="Đăng Xuất"
                 android:textColor="@color/colorPrimary"
                 android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:src="@drawable/remove"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:layout_height="wrap_content" />
+            <View
+                android:layout_width="match_parent"
+                android:background="#CFD8DC"
+                android:layout_alignParentBottom="true"
+                android:layout_height="1dp"></View>
         </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>

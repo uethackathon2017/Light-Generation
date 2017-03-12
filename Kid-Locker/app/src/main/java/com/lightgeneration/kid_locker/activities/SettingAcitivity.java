@@ -1,10 +1,12 @@
 package com.lightgeneration.kid_locker.activities;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
 import android.view.View;
@@ -15,6 +17,7 @@ import android.widget.RelativeLayout;
 import com.lightgeneration.kid_locker.R;
 import com.lightgeneration.kid_locker.service.LockService;
 import com.lightgeneration.kid_locker.utils.Constant;
+import com.lightgeneration.kid_locker.utils.LockKidApplication;
 import com.lightgeneration.kid_locker.utils.MySharedPreferences;
 
 /**
@@ -65,7 +68,7 @@ public class SettingAcitivity extends AppCompatActivity {
         openLock.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+
             }
         });
         logOut.setOnClickListener(new View.OnClickListener() {
@@ -111,16 +114,40 @@ public class SettingAcitivity extends AppCompatActivity {
                 if (b) {
                     if(!MySharedPreferences.isLockApp())
                     {
+
+                        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                                LockKidApplication.getAppContext());
+                        alertDialogBuilder.setTitle("Thông báo!");
+                        alertDialogBuilder
+                                .setMessage("Bạn hãy bật quyền truy cập cho ứng dựng!")
+                                .setCancelable(false)
+                                .setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog,int id) {
+                                     {
+                                            Intent intent = new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS);
+                                            startActivity(intent);
+                                        }
+                                    }
+                                })
+                                .setNegativeButton("No",new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog,int id) {
+                                        dialog.cancel();
+                                    }
+                                });
+
+
+                        AlertDialog alertDialog = alertDialogBuilder.create();
+
+                        alertDialog.show();
+                    }
+
                         startLockService();
                         MySharedPreferences.putBoolen(Constant.OPEN_LOCK_APP,true);
-                        if (Build.VERSION.SDK_INT > 20) {
-                            Intent intent = new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS);
-                            startActivity(intent);
-                        }
+
                     }
 
 
-                } else {
+                else {
                     if(MySharedPreferences.isLockApp())
                     {
                         MySharedPreferences.putBoolen(Constant.OPEN_LOCK_APP,false);

@@ -16,3 +16,8 @@
       'com.github.silvestrpredko:dot-progress-bar:0.1.4@aar'
       'com.github.eralpyucel:CircleProgressView:v1.1'
       'com.github.PhilJay:MPAndroidChart:v3.0.1'
+
+### Credits
+
+      Vũ Ngọc Sáng (leader)
+      Phạm Văn Long (co-leader)

@@ -13,10 +13,23 @@
         android:textColor="@color/colorPrimary"
         android:textSize="24dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:text="Bạn chưa đăng ký thông tin cho bé"
+        android:textColor="@color/color72"
+        android:textSize="18dp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/textView2"
+        android:layout_toRightOf="@+id/textView2"
         android:orientation="vertical">
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -26,6 +39,7 @@
             android:src="@drawable/img_be" />
 
         <TextView
+            android:id="@+id/tv_name_baby"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="32dp"
@@ -35,6 +49,7 @@
             android:textSize="24sp" />
 
         <TextView
+            android:id="@+id/tv_age_baby"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="32dp"
@@ -45,39 +60,17 @@
 
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Bạn chưa đăng ký thông tin cho bé"
-        android:textColor="@color/color72"
-        android:textSize="18dp"
-        android:visibility="gone" />
-
-    <TableRow
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btn_update"
+        android:layout_width="100dp"
         android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="32dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="32dp">
-
-        <Button
-            android:id="@+id/btn_sign_up"
-            android:layout_marginRight="16dp"
-            android:layout_weight="1"
-            android:background="@drawable/bg_button_login"
-            android:text="Đăng ký"
-            android:textAllCaps="false"
-            android:textColor="@color/colorWhite" />
-
-        <Button
-            android:id="@+id/btn_update"
-            android:layout_weight="1"
-            android:background="@drawable/bg_button_login"
-            android:text="Sửa thông tin"
-            android:textAllCaps="false"
-            android:textColor="@color/colorWhite" />
-    </TableRow>
+        android:layout_below="@+id/linear"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_button_login"
+        android:text="Sửa thông tin"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite" />
 </RelativeLayout>

@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.lightgeneration.kid_locker.R;
 import com.lightgeneration.kid_locker.fragments.graphs.GraphFragment;
@@ -28,6 +29,8 @@ import com.lightgeneration.kid_locker.utils.MySharedPreferences;
 public class ComponentActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
     private ImageView btnMenu;
     private DrawerLayout drawerLayout;
+    private View header;
+    private TextView tvName,tvAge;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,6 +47,12 @@ public class ComponentActivity extends AppCompatActivity implements View.OnClick
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        header=navigationView.getHeaderView(0);
+        tvAge=(TextView)header.findViewById(R.id.tv_age_header);
+        tvName=(TextView)header.findViewById(R.id.tv_name_header);
+        tvAge.setText("Tuôỉ : "+MySharedPreferences.getInt(Constant.AGE_BABY,0)+"");
+        tvName.setText(MySharedPreferences.getString(Constant.NAME_BABY,""));
+
         openLockFragment();
     }
 

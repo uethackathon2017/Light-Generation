@@ -2,6 +2,7 @@ package com.lightgeneration.kid_locker.networks;
 
 import com.lightgeneration.kid_locker.models.Account;
 import com.lightgeneration.kid_locker.models.FullQuestion;
+import com.lightgeneration.kid_locker.models.ItemComparision;
 import com.lightgeneration.kid_locker.models.ResponceAccount;
 import com.lightgeneration.kid_locker.models.ResponceLogin;
 import com.lightgeneration.kid_locker.models.User;
@@ -14,6 +15,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 /**
@@ -27,5 +29,9 @@ public interface ApiClient {
     Call<ResponceLogin> login(@Body User user);
     @POST("register")
     Call<ResponceAccount> register(@Body Account account);
+    @GET("api/log/{username}/comparision")
+    Call<ItemComparision> getComparison(@Path("username") String userName);
+    @PUT("api/user/{username}/{age}")
+    Call<ResponceAccount> editInfo(@Path("username") String username,@Path("age") int age);
 
 }

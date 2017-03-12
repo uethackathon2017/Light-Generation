@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:id="@+id/tool_bar_edit"
+        android:layout_height="50dp">
+        <ImageView
+            android:id="@+id/btn_back_edit"
+            android:layout_width="32dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_arrow_left" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Sửa Thông Tin Bé"
+            android:id="@+id/tv_title_register"
+            android:layout_centerVertical="true"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/tool_bar_edit"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/edit_username_edit"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:hint="Tên bé"
+            />
+        <EditText
+            android:id="@+id/edit_password_edit"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@+id/edit_username_edit"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:hint="Tuổi Bé"
+            />
+        <Button
+            android:id="@+id/btnEdit"
+            android:layout_width="90dp"
+            android:gravity="center"
+            android:layout_height="40dp"
+            android:layout_below="@+id/edit_password_edit"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bg_button_login"
+            android:text="Sửa"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="16dp" />
+    </RelativeLayout>
+</RelativeLayout>

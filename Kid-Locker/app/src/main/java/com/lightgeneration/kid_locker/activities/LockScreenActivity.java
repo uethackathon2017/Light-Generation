@@ -321,11 +321,23 @@ public class LockScreenActivity extends AppCompatActivity implements Runnable, V
                     }
                     case Constant.ANSWER_FAIL:
                         diano.doFail();
+                        handlerChangeUI.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                diano.doDance();
+                            }
+                        },1500);
                         break;
 
                     case Constant.SET_UNCLICKABLE: {
                         setAllClickable(false);
                         diano.doTrue();
+                        handlerChangeUI.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                diano.doDance();
+                            }
+                        },1500);
                         break;
                     }
 

@@ -4,24 +4,128 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorWhite"
     android:layout_height="match_parent">
-<RelativeLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-    <com.eralp.circleprogressview.CircleProgressView
-        android:id="@+id/circle_progress_view"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_gravity="center"
-        app:cpv_circle_color="#27375c"
-        app:cpv_circle_width="6dp"
-        app:cpv_background_circle_width="1dp"
-        app:cpv_background_circle_color="#5b253048"
-        app:cpv_text_prefix="%"
-        app:cpv_text_size="40"
-        app:cpv_text_color="#27375c"/>
-    <TextView
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:id="@+id/tv_recogn"
-        android:layout_height="wrap_content" />
-</RelativeLayout>
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_marginTop="20dp"
+            android:id="@+id/rl_recognize"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content">
+            <com.eralp.circleprogressview.CircleProgressView
+                android:id="@+id/circle_progress_recognize"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                app:cpv_circle_color="#27375c"
+                app:cpv_circle_width="6dp"
+                app:cpv_background_circle_width="1dp"
+                app:cpv_background_circle_color="#5b253048"
+                app:cpv_text_prefix="%"
+                app:cpv_text_size="40"
+                app:cpv_text_color="#27375c"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/tv_recognize"
+                android:text="Nhận Biết"
+                android:textSize="20dp"
+                android:layout_below="@+id/circle_progress_recognize"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:id="@+id/rl_leftRigh"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content">
+            <com.eralp.circleprogressview.CircleProgressView
+                android:id="@+id/circle_progress_leftRigh"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                app:cpv_circle_color="#27375c"
+                app:cpv_circle_width="6dp"
+                app:cpv_background_circle_width="1dp"
+                app:cpv_background_circle_color="#5b253048"
+                app:cpv_text_prefix="%"
+                app:cpv_text_size="40"
+                app:cpv_text_color="#27375c"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/tv_leftRigh"
+                android:text="Trái Phải"
+                android:textSize="20dp"
+                android:layout_below="@+id/circle_progress_leftRigh"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_marginTop="20dp"
+            android:id="@+id/rl_count"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/rl_leftRigh"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content">
+            <com.eralp.circleprogressview.CircleProgressView
+                android:id="@+id/circle_progress_count"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                app:cpv_circle_color="#27375c"
+                app:cpv_circle_width="6dp"
+                app:cpv_background_circle_width="1dp"
+                app:cpv_background_circle_color="#5b253048"
+                app:cpv_text_prefix="%"
+                app:cpv_text_size="40"
+                app:cpv_text_color="#27375c"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/tv_count"
+                android:text="Tập Đếm"
+                android:textSize="20dp"
+                android:layout_below="@+id/circle_progress_count"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/rl_upDown"
+            android:layout_below="@+id/rl_recognize"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content">
+            <com.eralp.circleprogressview.CircleProgressView
+                android:id="@+id/circle_progress_upDown"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                app:cpv_circle_color="#27375c"
+                app:cpv_circle_width="6dp"
+                app:cpv_background_circle_width="1dp"
+                app:cpv_background_circle_color="#5b253048"
+                app:cpv_text_prefix="%"
+                app:cpv_text_size="40"
+                app:cpv_text_color="#27375c"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/tv_upDown"
+                android:textSize="20dp"
+                android:text="Trên Dưới"
+                android:layout_below="@+id/circle_progress_upDown"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </RelativeLayout>
+
 </RelativeLayout>

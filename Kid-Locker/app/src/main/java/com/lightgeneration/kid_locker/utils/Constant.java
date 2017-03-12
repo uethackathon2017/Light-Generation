@@ -16,6 +16,8 @@ public class Constant {
     public static String IS_LOGIN="is_login";
     public static String NUMBER_QUESTION="number_question";
     public static String USER_NAME="user_name";
+    public static String NAME_BABY="name_baby";
+    public static String AGE_BABY="age_baby";
     public static final int UPDATE_NEXT_QUESTION = 1;
     public static final int FINISH_ACTIVITY_TEST = 2;
     public static final int SET_UNCLICKABLE = 3;

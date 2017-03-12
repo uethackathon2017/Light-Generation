@@ -45,6 +45,11 @@
         <activity android:name=".activities.RegisterActivity"
             android:theme="@style/AppTheme.Register"
             ></activity>
+        <activity android:name=".activities.EditInfoAcitivity"
+            android:theme="@style/AppTheme.Register"
+            >
+
+        </activity>
         <service android:name=".service.LockService"></service>
         <receiver android:name=".broadcast.BootBroadcast">
             <intent-filter>

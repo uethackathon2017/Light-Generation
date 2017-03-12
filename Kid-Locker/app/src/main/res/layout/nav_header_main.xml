@@ -10,24 +10,31 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    >
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="16dp"
-        app:srcCompat="@android:drawable/sym_def_app_icon" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="62dp"
+        android:layout_height="62dp"
+        android:paddingTop="10dp"
+        android:src="@drawable/img_be" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="16dp"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/colorWhite"
+        android:id="@+id/tv_name_header"
         android:text="Văn Long Phạm"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+         />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_age_header"
         android:layout_width="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:textSize="15dp"
+        android:layout_marginLeft="10dp"
         android:layout_height="wrap_content"
         android:text="phamvanlong021096@gmail.com" />
 </LinearLayout>

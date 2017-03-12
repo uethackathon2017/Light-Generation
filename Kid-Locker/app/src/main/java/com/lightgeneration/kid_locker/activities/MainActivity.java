@@ -1,5 +1,6 @@
 package com.lightgeneration.kid_locker.activities;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -26,6 +27,7 @@ import retrofit2.Callback;
 public class MainActivity extends AppCompatActivity {
     private Button btnLogin,btnRegister;
     private EditText userName,passWord;
+    private ProgressDialog progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +80,12 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         closeKeyboard();
-     //   DialogUtil.getInstance().showLoading(LockKidApplication.getAppContext());
+        progress=new ProgressDialog(MainActivity.this);
+        progress.setMessage("Loading...");
+        progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progress.setCanceledOnTouchOutside(false);
+        progress.setCancelable(false);
+        progress.show();
         User user=new User(userName.getText().toString(),passWord.getText().toString());
         ApiClientUtils.getApiClient().login(user).enqueue(new Callback<ResponceLogin>() {
             @Override
@@ -88,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 MySharedPreferences.putString(Constant.USER_NAME,login.getUsername());
                 MySharedPreferences.putBoolen(Constant.IS_LOGIN,true);
                 closeKeyboard();
+                progress.dismiss();
                 Intent intent = new Intent(LockKidApplication.getAppContext(), ComponentActivity.class);
                 startActivity(intent);
                   finish();

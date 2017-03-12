@@ -23,7 +23,7 @@ import com.lightgeneration.kid_locker.utils.MySharedPreferences;
 
 public class SettingAcitivity extends AppCompatActivity {
     private SwitchCompat switchCompat,switchOpenLockApp;
-  private RelativeLayout changePass;
+  private RelativeLayout changePass,logOut,openLock;
     private ImageView btnBack;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,9 +54,29 @@ public class SettingAcitivity extends AppCompatActivity {
         switchOpenLockApp=(SwitchCompat)findViewById(R.id.switch_btn_lock_app);
         changePass=(RelativeLayout)findViewById(R.id.rl_change_pass);
         btnBack=(ImageView)findViewById(R.id.btn_back_setting);
+        logOut=(RelativeLayout)findViewById(R.id.rl_log_out);
+        openLock=(RelativeLayout)findViewById(R.id.rl_open_lock_my_app);
     }
     private void declareClick()
     {
+
+
+
+        openLock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                
+            }
+        });
+        logOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MySharedPreferences.putBoolen(Constant.IS_LOGIN,false);
+                Intent i=new Intent(SettingAcitivity.this,MainActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

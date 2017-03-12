@@ -1,5 +1,6 @@
 package com.lightgeneration.kid_locker.activities;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,7 +17,9 @@ import com.lightgeneration.kid_locker.models.Account;
 import com.lightgeneration.kid_locker.models.ResponceAccount;
 import com.lightgeneration.kid_locker.networks.ApiClient;
 import com.lightgeneration.kid_locker.networks.ApiClientUtils;
+import com.lightgeneration.kid_locker.utils.Constant;
 import com.lightgeneration.kid_locker.utils.LockKidApplication;
+import com.lightgeneration.kid_locker.utils.MySharedPreferences;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -30,6 +33,7 @@ public class RegisterActivity extends AppCompatActivity{
     private EditText name,pass,user,age;
     private Button register;
     private ImageView btnback;
+    private ProgressDialog progress;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,13 +90,23 @@ public class RegisterActivity extends AppCompatActivity{
             Toast.makeText(LockKidApplication.getAppContext(),"Bạn phải nhập tuổi của bé !",Toast.LENGTH_LONG).show();
             return;
         }
+        progress=new ProgressDialog(RegisterActivity.this);
+        progress.setMessage("Loading...");
+        progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progress.setCanceledOnTouchOutside(false);
+        progress.setCancelable(false);
+        progress.show();
         Account account=new Account(user.getText().toString(),pass.getText().toString(),name.getText().toString(),Integer.valueOf(age.getText().toString()));
         ApiClientUtils.getApiClient().register(account).enqueue(new Callback<ResponceAccount>() {
             @Override
             public void onResponse(Call<ResponceAccount> call, Response<ResponceAccount> response) {
                 Toast.makeText(LockKidApplication.getAppContext(),"Đăng kí thành công!!",Toast.LENGTH_LONG).show();
                 closeKeyboard();
+                MySharedPreferences.putInt(Constant.AGE_BABY,Integer.valueOf(age.getText().toString()));
+                MySharedPreferences.putString(Constant.NAME_BABY,name.getText().toString());
+                progress.dismiss();
                 finish();
+
                 overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
             }
 

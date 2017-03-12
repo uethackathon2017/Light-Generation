@@ -70,6 +70,10 @@ public class MySharedPreferences {
     {
         return getPreferences().getBoolean(Constant.OPEN_LOCK_MY_APP,false);
     }
+    public static void putInt(String key,int value)
+    {
+        getEditor().putInt(key,value).commit();
+    }
     public static int getInt(String key,int value)
     {
         return getPreferences().getInt(key,value);

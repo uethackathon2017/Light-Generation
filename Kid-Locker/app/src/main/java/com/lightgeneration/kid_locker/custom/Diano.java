@@ -47,6 +47,7 @@ public class Diano extends ImageView{
     }
     public void doTrue()
     {
+        
         setBackgroundResource(R.drawable.dino_true);
         final AnimationDrawable drawable= (AnimationDrawable) getBackground();
         post(new Runnable() {

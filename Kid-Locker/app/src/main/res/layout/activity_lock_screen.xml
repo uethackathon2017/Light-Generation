@@ -6,13 +6,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/background">
 
-    <ImageView
-        android:id="@+id/ic_close_test"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/ic_close_circle" />
 
     <ImageView
         android:id="@+id/ic_volume"
@@ -20,7 +13,6 @@
         android:layout_height="48dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_toRightOf="@id/ic_close_test"
         android:src="@drawable/ic_volume" />
 
     <TextView

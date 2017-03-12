@@ -92,32 +92,32 @@ public class LockService extends Service {
                     }
 
                 }
-                 if(currentApp.equals("com.lightgeneration.kid_locker"))
-                {
-                    if(MySharedPreferences.isLockMyApp())
-                    {
-
-                        if(MySharedPreferences.getBoolean(Constant.ON_TEST))
-                        {
-                            return;
-                        }
-                        else {
-                            if(MySharedPreferences.isActive())
-                            {
-                                return;
-                            }
-                            else {
-                                Intent i = new Intent(LockService.this, PassWordActivity.class);
-                                i.putExtra("isInSetting",false);
-                                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                startActivity(i);
-                            }
-
-                        }
-
-                    }
-
-                }
+//                 if(currentApp.equals("com.lightgeneration.kid_locker"))
+//                {
+//                    if(MySharedPreferences.isLockMyApp())
+//                    {
+//
+//                        if(MySharedPreferences.getBoolean(Constant.ON_TEST))
+//                        {
+//                            return;
+//                        }
+//                        else {
+//                            if(MySharedPreferences.isActive())
+//                            {
+//                                return;
+//                            }
+//                            else {
+//                                Intent i = new Intent(LockService.this, PassWordActivity.class);
+//                                i.putExtra("isInSetting",false);
+//                                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                                startActivity(i);
+//                            }
+//
+//                        }
+//
+//                    }
+//
+//                }
             }
             else{
                 String mpackageName = activityManager.getRunningTasks(1).get(0).topActivity.getPackageName();

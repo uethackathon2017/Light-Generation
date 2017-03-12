@@ -116,12 +116,12 @@ public class SettingAcitivity extends AppCompatActivity {
                     {
 
                         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-                                LockKidApplication.getAppContext());
+                                SettingAcitivity.this);
                         alertDialogBuilder.setTitle("Thông báo!");
                         alertDialogBuilder
-                                .setMessage("Bạn hãy bật quyền truy cập cho ứng dựng!")
+                                .setMessage("Bạn hãy bật quyền truy cập cho ứng dụng!")
                                 .setCancelable(false)
-                                .setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+                                .setPositiveButton("Đồng ý",new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog,int id) {
                                      {
                                             Intent intent = new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS);
@@ -129,7 +129,7 @@ public class SettingAcitivity extends AppCompatActivity {
                                         }
                                     }
                                 })
-                                .setNegativeButton("No",new DialogInterface.OnClickListener() {
+                                .setNegativeButton("Không",new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog,int id) {
                                         dialog.cancel();
                                     }
